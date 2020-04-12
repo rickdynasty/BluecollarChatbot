@@ -155,3 +155,52 @@
 - Can you tell me about rasa x?
 - 告诉我一些关于rasa x的内容
 - 告诉我什么是rasa x
+
+## intent:contact_sales
+- 我想和您的销售人员谈谈。
+- 我想和您的销售人员聊一下
+- 我想和销售员谈谈
+- 销售员
+- 请帮我连线销售员电话
+- 请帮接通销售员
+- 我想与您的销售人员联系
+- 我想和您销售团队的人谈谈
+- 销售员，谢谢
+
+## intent:inform
+- [100k](budget)
+- [100k](budget)
+- [240k/year](budget)
+- [150000 RMB](budget)
+- I work for [Rasa](company)
+- 我的公司是[Rasa](company)
+- 公司的名字是[PASC](company)
+- 公司: [Rasa Technologies](company)
+- 国内的一家小公司, 名字是[智能客服机器人](company)
+- 一个科技公司, [Rasa](company)
+- [ACME](company)
+- [Rasa Technologies](company)
+- [bot-fan@live.cm](business_email)
+- [rick_tan@qq.com](business_email)
+- [bot-fan@bots.com](business_email)
+- [rick_tan@rasa.com](business_email)
+- [研发工程师](job)
+- [产品经理](job)
+- [销售经理](job)
+- [测试](job)
+- [设计](job)
+- [企业策划经理](job)
+- [CTO](job_function)
+- [CEO](job_function)
+- [COO](job_function)
+- [成领](name)
+- [rick](name)
+- [rick_tan](name)
+- [马云](name)
+- [马化腾](name)
+- [小马哥](name)
+- 我们计划构建一个[销售机器人](use_case)使我们的销售额增加500％。
+- 我们计划构建一个[销售机器人](use_case)使我们的收入增加100％。
+- 一个可以帮我们选择最佳人寿保险咨询潜在客户的 [保险工具](use_case)。
+- 我们在建设[对话助手](use_case)来帮助我们的员工预定会议室。
+

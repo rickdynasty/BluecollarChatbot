@@ -24,6 +24,6 @@ policies:
   - name: FallbackPolicy
     fallback_action_name: 'action_default_fallback'
   - name: MemoizationPolicy
-    max_history: 3
+  - name: KerasPolicy
   - name: MappingPolicy
   - name: FormPolicy

@@ -37,3 +37,9 @@
 ## say no 
 * deny
     - utter_deny
+    
+## sales form
+* contact_sales
+    - sales_form                   <!--运行sales_form Action-->
+    - form{"name": "sales_form"}   <!--激活这个form-->
+    - form{"name": null}           <!--停用这个form-->

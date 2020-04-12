@@ -1,27 +1,31 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/core/actions/#custom-actions/
+from typing import Dict, Text, Any, List, Union
 
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.forms import FormAction
 
-# This is a simple example for a custom action which utters "Hello World!"
+class SalesForm(FormAction):
+    """Collects sales information and adds it to the spreadsheet"""
 
-# from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
+    def name(self):
+        return "sales_form"
+
+    @staticmethod
+    def required_slots(tracker):
+        return [
+            "job_function",
+            "use_case",
+            "budget",
+            "person_name",
+            "company",
+            "business_email",
+        ]
+
+    def submit(
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> List[Dict]:
+        dispatcher.utter_message("感谢您的联系，我们会尽快与您联系")
+        return []

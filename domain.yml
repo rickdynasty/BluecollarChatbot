@@ -7,6 +7,16 @@ intents:
   - whoareyou
   - whattodo
   - faq
+  - contact_sales
+  - inform
+
+entities:
+  - company
+  - job
+  - name
+  - budget
+  - email
+  - use_case
 
 actions:
   - utter_affirm
@@ -17,6 +27,23 @@ actions:
   - respond_faq
   - utter_whoareyou
   - utter_whattodo
+
+forms:
+  - sales_form
+
+slots:
+  company:
+    type: unfeaturized
+  job:
+    type: unfeaturized
+  name:
+    type: unfeaturized
+  budget:
+    type: unfeaturized
+  email:
+    type: unfeaturized
+  use_case:
+    type: unfeaturized
 
 responses:
   utter_affirm:
@@ -54,3 +81,16 @@ responses:
 
   utter_whattodo:
     - text: "您好！很高兴为您服务，我们来闲聊一会吧。"
+
+  utter_ask_email:
+    - text: "你的电子邮件是?"
+  utter_ask_company:
+    - text: "你的公司是?"
+  utter_ask_budget:
+    - text: "你的conversational AI预算是多少?"
+  utter_ask_job:
+    - text: "你的工作是?"
+  utter_ask_name:
+    - text: "你的名字是?"
+  utter_ask_use_case:
+    - text: "你的conversational AI使用场景?"
