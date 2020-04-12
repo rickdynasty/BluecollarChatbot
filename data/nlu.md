@@ -217,7 +217,7 @@
 - 干嘛会要这个?
 
 ## intent:out_of_scope
-- I want to order food
-- What is 2 + 2?
-- Who’s the US President?
-- I need a job
+- 我想订餐
+- 2 + 2 等于几?
+- 谁是美国总统?
+- 我在找工作

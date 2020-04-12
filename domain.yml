@@ -120,4 +120,4 @@ responses:
   utter_explain_why_name:
     - text: "我们需要知道你的名字，以便在备案的时候知道当初是谁处理的"
   utter_out_of_scope:
-    - text: "抱歉，小爱还在成长中，暂时没法处理这个请求~"
+    - text: "抱歉，小爱还在成长中，暂时不能处理这个请求~"
