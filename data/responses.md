@@ -1,9 +1,6 @@
 ## ask channels
 * faq/ask_channels
-  - We have a comprehensive list of [supported connectors](https://rasa.com/docs/core/connectors/), but if
-    you don't see the one you're looking for, you can always create a custom connector by following
-    [this guide](https://rasa.com/docs/rasa/user-guide/connectors/custom-connectors/).
-  - 我们有完整的清单[supported connectors](https://rasa.com/docs/core/connectors/), 但是，如果您没有找到所需的，则始终可以通过以下方法创建自定义连接器[this guide](https://rasa.com/docs/rasa/user-guide/connectors/custom-connectors/).
+  - 我们有完整的[supported connectors](https://rasa.com/docs/core/connectors/)清单, 如果在清单里面都没找到所需的，你可以通过[this guide](https://rasa.com/docs/rasa/user-guide/connectors/custom-connectors/)来实现自定义connectors。
 
 ## ask languages
 * faq/ask_languages

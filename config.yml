@@ -12,6 +12,8 @@ pipeline:
 - name: "RegexFeaturizer"
 - name: "MitieFeaturizer"
 - name: "SklearnIntentClassifier"
+- name: ResponseSelector
+  epochs: 100
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
@@ -22,5 +24,6 @@ policies:
   - name: FallbackPolicy
     fallback_action_name: 'action_default_fallback'
   - name: MemoizationPolicy
-    max_history: 5
+    max_history: 3
+  - name: MappingPolicy
   - name: FormPolicy
