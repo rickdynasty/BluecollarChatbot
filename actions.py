@@ -1,4 +1,5 @@
 from rasa_sdk import Action, Tracker
+from rasa_sdk.events import UserUtteranceReverted
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 from typing import Dict, Text, Any, List, Union
@@ -57,3 +58,14 @@ class SalesForm(FormAction):
                 self.from_text(intent="inform"),
             ],
         }
+
+
+class ActionGreetUser(Action):
+    """Revertible mapped action for utter_greet"""
+
+    def name(self):
+        return "action_greet"
+
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_template("utter_greet", tracker)
+        return [UserUtteranceReverted()]

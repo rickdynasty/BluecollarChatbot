@@ -1,5 +1,5 @@
 intents:
-  - greet
+  - greet: {triggers: action_greet}
   - goodbye
   - thanks
   - affirm
@@ -9,6 +9,8 @@ intents:
   - faq
   - contact_sales
   - inform
+  - explain
+  - out_of_scope
 
 entities:
   - company
@@ -27,6 +29,7 @@ actions:
   - respond_faq
   - utter_whoareyou
   - utter_whattodo
+  - action_greet
 
 forms:
   - sales_form
@@ -44,6 +47,16 @@ slots:
     type: unfeaturized
   use_case:
     type: unfeaturized
+
+  requested_slot:
+    type: categorical
+    values:
+      - email
+      - company
+      - name
+      - use_case
+      - budget
+      - job
 
 responses:
   utter_affirm:
@@ -94,3 +107,17 @@ responses:
     - text: "你的名字是?"
   utter_ask_use_case:
     - text: "你的conversational AI使用场景?"
+  utter_explain_why_budget:
+    - text: "我们需要知道您的预算以推荐订阅"
+  utter_explain_why_email:
+    - text: "我们需要您的电子邮件，以便我们与您联系"
+  utter_explain_why_company:
+  - text: "我们需要记录你的公司名称"
+  utter_explain_why_job:
+    - text: "我们需要记录一下你的职位信息，方便后面更精确的推荐服务"
+  utter_explain_why_use_case:
+    - text: "我们需要知道您的conversational AI使用场景以更精准的推荐服务"
+  utter_explain_why_name:
+    - text: "我们需要知道你的名字，以便在备案的时候知道当初是谁处理的"
+  utter_out_of_scope:
+    - text: "抱歉，小爱还在成长中，暂时没法处理这个请求~"

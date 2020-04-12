@@ -204,3 +204,20 @@
 - 一个可以帮我们选择最佳人寿保险咨询潜在客户的 [保险工具](use_case)。
 - 我们在建设[对话助手](use_case)来帮助我们的员工预定会议室。
 
+## intent:explain
+- why
+- 为什么
+- 为什么是这样的
+- 你们为什么要这个
+- 你们为什么需要知道这个?
+- 你能解释一下你们为什么要这个吗?
+- 什么需要知道这个?
+- 要这个有啥用?
+- 干嘛要知道这个?
+- 干嘛会要这个?
+
+## intent:out_of_scope
+- I want to order food
+- What is 2 + 2?
+- Who’s the US President?
+- I need a job
