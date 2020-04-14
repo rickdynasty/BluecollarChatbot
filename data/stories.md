@@ -31,14 +31,30 @@
 ## bye
 * bye
   - utter_bye
-    
+  
+## bye with greet
+* greet
+  - utter_greet
+* bye
+  - utter_bye
+  
 ## thank
 * thank
     - utter_thank
     
-## stop 
-* stop
-    - utter_stop
+## thank with greet
+* greet
+  - utter_greet
+* thank
+    - utter_thank
+
+## greet + thanks + goodbye
+* greet
+  - utter_greet
+* thank
+  - utter_thank
+* bye
+  - utter_bye
     
 ## who are you
 * whoareyou
@@ -47,6 +63,10 @@
 ## what to do
 * whattodo
     - utter_whattodo
+
+## Some question from FAQ
+* faq
+    - respond_faq
     
 ## request weather
 * request_weather
@@ -82,7 +102,3 @@
     - utter_explain_why_date-time
     - weather_form
     - form{"name": null}
-    
-## Some question from FAQ
-* faq
-    - respond_faq

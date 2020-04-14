@@ -7,7 +7,6 @@ intents:
   - whattodo
   - thank
   - deny
-  - stop
   - faq
   - request_weather
 
@@ -69,11 +68,6 @@ responses:
   utter_deny:
     - text: "主人，您不开心吗？不要离开我哦"
     - text: "怎么了，主人？"
-
-  utter_stop:
-    - text: "好吧，别期待我会想你的哦"
-    - text: "我好伤心，555555"
-    - text: "好吧，那下次再找我聊天"
 
   utter_thank:
     - text: "嗯呢。不用客气~"

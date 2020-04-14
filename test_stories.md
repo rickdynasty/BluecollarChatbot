@@ -2,21 +2,35 @@
 * greet: Hi!
   - utter_greet
 * bye: Bye
-  - utter_goodbye
+  - utter_bye
 
+## greet + affirm
+* greet: Hi!
+  - utter_greet
+* affirm: 好
+  - utter_affirm
+
+## greet + affirm + goodbye
+* greet: Hi!
+  - utter_greet
+* affirm: yes
+  - utter_affirm
+* bye: 下次再聊
+  - utter_bye
+  
 ## greet + thanks
 * greet: Hello there
   - utter_greet
-* thank: thanks a bunch
-  - utter_thanks
+* thank: thanks
+  - utter_thank
 
 ## greet + thanks + goodbye
 * greet: Hey
   - utter_greet
 * thank: thank you
-  - utter_thanks
+  - utter_thank
 * bye: bye bye
-  - utter_goodbye
+  - utter_bye
   
 ## ask channels
 * faq: rasa支持哪些通讯渠道？
