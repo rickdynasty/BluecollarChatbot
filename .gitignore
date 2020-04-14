@@ -8,6 +8,7 @@ __pycache__/
 */__pycache__/
 out.log
 graph.html
+models
 
 # Local configuration file (sdk path, etc)
 local.properties

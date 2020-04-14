@@ -16,11 +16,21 @@ from requests import (
 from log.BCLog import log
 
 
+class ActionGreetUser(Action):
+    """Revertible mapped action for utter_greet"""
+
+    def name(self):
+        return "action_greet"
+
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_template("utter_greet", tracker)
+        return [UserUtteranceReverted()]
+		
+		
 class WeatherForm(FormAction):
+    """Collects sales information and adds it to the spreadsheet"""
 
     def name(self) -> Text:
-        """Unique identifier of the form"""
-        log.info("WeatherForm name:weather_form")
         return "weather_form"
 
     @staticmethod
@@ -54,8 +64,8 @@ class WeatherForm(FormAction):
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict[Text, Any]]]]:
         """A dictionary to map required slots to
 
-                 - intent: value pairs
-            - a whole message
+        - intent: value pairs
+        - a whole message
             or a list of them, where a first match will be picked"""
         log.info("call slot_mappings")
         return {
@@ -130,7 +140,7 @@ class ActionDefaultFallback(Action):
         return 'action_default_fallback'
 
     def run(self, dispatcher, tracker, domain):
-
+        log.info("call ActionDefaultFallback run o(╯□╰)o")
         # 访问图灵机器人API(闲聊)
         text = tracker.latest_message.get('text')
         message = get_response(text)
@@ -139,3 +149,4 @@ class ActionDefaultFallback(Action):
         else:
             dispatcher.utter_template('utter_default', tracker, silent_fail=True)
         return [UserUtteranceReverted()]
+

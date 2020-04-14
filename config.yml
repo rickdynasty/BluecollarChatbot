@@ -3,24 +3,32 @@
 language: "zh"
 
 pipeline:
-- name: "MitieNLP"
-  model: "data/total_word_feature_extractor_zh.dat"
-- name: "JiebaTokenizer"
-  dictionary_path: "data/dict"
-- name: "MitieEntityExtractor"
-- name: "EntitySynonymMapper"
-- name: "RegexFeaturizer"
-- name: "MitieFeaturizer"
-- name: "SklearnIntentClassifier"
+  - name: "MitieNLP"
+    model: "data/total_word_feature_extractor_zh.dat"
+  - name: "JiebaTokenizer"
+    dictionary_path: "data/dict"
+  - name: "MitieEntityExtractor"
+  - name: "EntitySynonymMapper"
+  - name: "RegexFeaturizer"
+  - name: "MitieFeaturizer"
+  - name: "SklearnIntentClassifier"
+  - name: ResponseSelector
+    epochs: 100
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
+
+# 2.0之后KerasPolicy → TEDPolicy
+# 当出现下面其中的情况时FallbackPolicy将触发Fallback Actions：
+#   1、意图识别的置信度低于nlu_threshold；
+#   2、排名最高的意图与排名第二的意图之间的置信度差异小于模糊阈值；
+#   3、没有一个对话策略的预测结果的置信度高于core_threshold
 policies:
-  - name: KerasPolicy
+  - name: TEDPolicy
     epochs: 500
     max_history: 5
   - name: FallbackPolicy
     fallback_action_name: 'action_default_fallback'
   - name: MemoizationPolicy
-    max_history: 5
   - name: FormPolicy
+  - name: MappingPolicy

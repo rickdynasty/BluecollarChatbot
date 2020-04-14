@@ -1,1 +1,0 @@
-{"dtype": "<U15", "py/object": "numpy.ndarray", "values": ["affirm", "bye", "deny", "explain", "faq", "greet", "request_weather", "stop", "thank", "whattodo", "whoareyou"]}

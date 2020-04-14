@@ -1,8 +1,0 @@
-{
-  "priority": 5,
-  "max_history": 2,
-  "lookup": {
-    "eJyLri4oSi2LL09NLMlILYpPyy/KtVIw1DOo1VGoTkwuySxLBYthKtBRyMwrSc0riU9LLIQKgE0CacrPi8/JLAbKQoyKBQBhaiPy": "weather_form",
-    "eJyLri4oSi2LL09NLMlILYpPyy/KtVIw1DOo1VGoTkwuySxLBYthKtBRyMwrSc0riU+tKMhJzMyDCoJNA2nMz4vPySwGqoAYFwsAAvIlqw==": "weather_form"
-  }
-}

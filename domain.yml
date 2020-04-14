@@ -1,20 +1,27 @@
 intents:
+  - greet: {triggers: action_greet}
   - affirm
-  - greet
   - bye
   - explain
   - whoareyou
   - whattodo
   - thank
   - deny
+  - stop
   - faq
   - request_weather
 
+#requested_slot特征化并为其分配分类类型，这样Core在进行预测时会注意该插槽的值，而未特征化的插槽仅用于存储信息。
 slots:
   date-time:
     type: unfeaturized
   address:
     type: unfeaturized
+  requested_slot:
+    type: categorical
+    values:
+      - date-time
+      - address
 
 entities:
   - date-time
@@ -25,12 +32,16 @@ actions:
   - utter_affirm
   - utter_greet
   - utter_bye
-  - utter_explain
   - utter_whoareyou
   - utter_whattodo
   - utter_thank
   - utter_deny
   - respond_faq
+  - action_greet
+  - utter_explain_why_address
+  - utter_explain_why_date-time
+  - action_default_fallback
+  - utter_default
 
 forms:
   - weather_form
@@ -76,10 +87,19 @@ responses:
     - text: "您好！很高兴为您服务，你可以和我聊天，我也可以查询天气哦~"
 
   utter_ask_date-time:
-    - text: "请问您要查询哪一天的天气？"
+    - text: "您要查询哪天的天气？"
 
   utter_ask_address:
-    - text: "请问您要查下哪里的天气？"
+    - text: "您要查下哪个地方的天气？"
+
+  utter_explain_why_address:
+    - text: "我们需要知道你想知道具体哪个地方的天气！"
+
+  utter_explain_why_date-time:
+    - text: "我们需要知道你想知道具体哪天的天气！"
+
+  utter_default:
+    - text: "诶呀~o(╯□╰)o，小爱没听懂，我会努力成长的 (*^▽^*)~"
 
 session_config:
   session_expiration_time: 60

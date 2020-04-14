@@ -401,7 +401,7 @@
 - rasa支持哪些渠道
 - rasa支持哪些信息渠道？
 
-## intent: faq/ask_languages
+## intent:faq/ask_languages
 - rasa支持什么语言？
 - 你支持什么语言？
 - rasa支持哪种语言？
@@ -409,7 +409,7 @@
 - 我可以使用rasa更改支持语言吗？
 - 支持什么语言
 
-## intent: faq/ask_rasax
+## intent:faq/ask_rasax
 - 我想了解关于rasa x的一些事
 - 我想续写更多关于rasa x的
 - rasa x 是什么？
@@ -418,8 +418,14 @@
 - 告诉我一些关于rasa x的内容
 - 告诉我什么是rasa x
 
-## intent: request_weather
+## intent:request_weather
 - 天气
+- 今天的天气怎样
+- 今天的天气是怎样
+- 出门要带伞么
+- 今天会下雨么
+- 小爱，今天会下雨么
+- 今天的空气怎样
 - 查询天气
 - 帮我查天气信息
 - 我想知道[明天](date-time)的天气
@@ -434,7 +440,7 @@
 - 查下[今天](date-time)[上海](address)的天气
 - 帮我查查[佛山](address)这[周六](date-time)的天气
 
-## intent: stop
+## intent:stop
 - stop
 - 停
 - 滚一边去
@@ -443,6 +449,18 @@
 - 不说了
 - 不想聊了
 - 不聊了
+
+## intent:explain
+- why
+- 为什么
+- 为什么是这样的
+- 你们为什么要这个
+- 你们为什么需要知道这个?
+- 你能解释一下你们为什么要这个吗?
+- 什么需要知道这个?
+- 要这个有啥用?
+- 干嘛要知道这个?
+- 干嘛会要这个?
 
 ## synonym:天气  <!-- entity 同义词 -->
 - 雨
@@ -454,5 +472,5 @@
 ## regex:phone_number  <!-- 正则表达式 -->
 - ((\d{3,4}-)?\d{7,8})|(((\+86)|(86))?(1)\d{10})
 
-## lookup:additional_currencies  <!-- specify lookup tables in an external file -->
-data/lookup_tables/DataPackage.txt
+## lookup:request weather  <!-- specify lookup tables in an external file -->
+data/lookup_tables/weather.txt
