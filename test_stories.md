@@ -23,6 +23,14 @@
   - utter_greet
 * thank: thanks
   - utter_thank
+  
+## greet + deny + thanks
+* greet: Hello there
+  - utter_greet
+* deny: 不，谢谢
+  - utter_deny
+* thank: thanks!
+  - utter_thank
 
 ## greet + thanks + goodbye
 * greet: Hey

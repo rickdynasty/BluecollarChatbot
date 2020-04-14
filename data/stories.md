@@ -18,7 +18,7 @@
 * greet
   - utter_greet
 * deny
-  - utter_bye
+  - utter_deny
 
 ## affirm
 * affirm
