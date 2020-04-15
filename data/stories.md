@@ -61,8 +61,8 @@
     - utter_whoareyou
     
 ## what to do
-* whattodo
-    - utter_whattodo
+* whatcanudo
+    - utter_whatcanudo
 
 ## Some question from FAQ
 * faq

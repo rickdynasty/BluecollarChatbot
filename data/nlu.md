@@ -244,7 +244,7 @@
 - 可以告诉我你的名字吗
 - 你叫什么名字
 
-## intent:whattodo
+## intent:whatcanudo
 - 你支持什么功能
 - 你有什么功能
 - 你能干什么

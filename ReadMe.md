@@ -65,7 +65,7 @@ python server.py
 ### 测试数据模型
 **使用test_stories.md测试数据模型**
 ```test
-rasa test --e2e --stories test_stories.md
+rasa test --e2e --stories test/test_stories.md
 ```
 
 ## License

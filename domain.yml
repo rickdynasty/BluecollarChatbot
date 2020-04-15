@@ -4,7 +4,7 @@ intents:
   - bye
   - explain
   - whoareyou
-  - whattodo
+  - whatcanudo
   - thank
   - deny
   - faq
@@ -32,7 +32,7 @@ actions:
   - utter_greet
   - utter_bye
   - utter_whoareyou
-  - utter_whattodo
+  - utter_whatcanudo
   - utter_thank
   - utter_deny
   - respond_faq
@@ -78,7 +78,7 @@ responses:
     - text: "您好！我是小爱，您的AI助理"
     - text: "我是小爱~呀，您的AI助理"
 
-  utter_whattodo:
+  utter_whatcanudo:
     - text: "您好！很高兴为您服务，你可以和我聊天，我也可以查询天气哦~"
 
   utter_ask_date-time:
