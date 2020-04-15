@@ -36,6 +36,10 @@ pip install jieba
 rasa train
 ```
 
+```使用Supervised_Embedding训练NLU和Core模型
+rasa train --config configs/jieba_supervised_embeddings_config.yml
+```
+
 ## 3. 运行服务  
 
 **（1）启动Rasa服务**
@@ -66,6 +70,14 @@ python server.py
 **使用test_stories.md测试数据模型**
 ```test
 rasa test --e2e --stories test/test_stories.md
+```
+**使用交叉验证估计模型的概括程度**
+```使用标识--cross-validation进行交叉验证
+rasa test nlu -u data/nlu.md --config config.yml --cross-validation
+```
+**评估训练模型**
+``` 待摸索
+rasa test core --stories test/test_stories.md --out results
 ```
 
 ## License
