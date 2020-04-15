@@ -62,6 +62,12 @@ python server.py
 
 ` http://127.0.0.1:8088/ai?content="查询广州明天的天气"`
 
+### 测试数据模型
+**使用test_stories.md测试数据模型**
+```test
+rasa test --e2e --stories test_stories.md
+```
+
 ## License
 > ```
 > Copyright 2020 chengling

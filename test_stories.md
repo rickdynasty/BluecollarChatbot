@@ -1,4 +1,4 @@
-## greet + goodbye
+## End-to-End tests where a custom action appends events（greet + goodbye）
 * greet: Hi!
   - utter_greet
 * bye: Bye
@@ -51,3 +51,35 @@
 ## ask rasa x
 * faq: Rasa X是什么?
   - respond_faq
+  
+## request whoareyou
+* whoareyou: 你是谁
+  - utter_whoareyou
+  
+## request whattodo
+* whattodo: 你有什么用
+  - utter_whattodo
+
+## Testing request weather with a form
+* greet: hi
+    - utter_greet
+* request_weather: 查下[今天](date-time)[北京](address)的天气
+    - weather_form
+    - form{"name": "weather_form"}
+* thank: thanks
+    - utter_thank
+
+## Testing request weather with a form and unexpected user input
+* greet: hi
+    - utter_greet
+* request_weather: 查下[今天](date-time)的天气
+    - weather_form
+    - form{"name": "weather_form"}
+<!-- The user sends a message which should not be handled by the form. -->
+* whattodo: 你能做什么
+    - utter_whattodo
+    - weather_form
+    - form{"name": null}
+    - slot{"requested_slot": "address"}
+* thank: thanks
+    - utter_thank

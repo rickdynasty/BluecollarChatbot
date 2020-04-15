@@ -250,8 +250,10 @@
 - 你能干什么
 - 你能做什么
 - 你有什么用
+- 你有啥用
 - 你能帮我什么
 - 你能帮我做什么
+- 你可以做什么
 
 ## intent:thank
 - 谢谢
@@ -382,8 +384,9 @@
 - 你支持什么语言？
 - rasa支持哪种语言？
 - rasa支持哪些语言
-- 我可以使用rasa更改支持语言吗？
+- 我可以使用rasa更改支持的语言吗？
 - 支持什么语言
+- 我可以用哪种语言来构建assistants?
 
 ## intent:faq/ask_rasax
 - 我想了解关于rasa x的一些事
@@ -438,5 +441,5 @@
 ## regex:phone_number  <!-- 正则表达式 -->
 - ((\d{3,4}-)?\d{7,8})|(((\+86)|(86))?(1)\d{10})
 
-## lookup:request weather  <!-- specify lookup tables in an external file -->
-data/lookup_tables/weather.txt
+## lookup:Custom vocabulary  <!-- specify lookup tables in an external file -->
+data/lookup_tables/vocabulary.txt

@@ -75,7 +75,8 @@ responses:
     - text: "嗯嗯，合作愉快！"
 
   utter_whoareyou:
-    - text: "您好！我是小爱，您的AI智能助理"
+    - text: "您好！我是小爱，您的AI助理"
+    - text: "我是小爱~呀，您的AI助理"
 
   utter_whattodo:
     - text: "您好！很高兴为您服务，你可以和我聊天，我也可以查询天气哦~"
