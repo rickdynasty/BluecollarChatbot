@@ -76,8 +76,17 @@ rasa test --e2e --stories test/test_stories.md
 rasa test nlu -u data/nlu.md --config config.yml --cross-validation
 ```
 **评估训练模型**
-``` 待摸索
+``` ^
 rasa test core --stories test/test_stories.md --out results
+```
+**比较Core的配置**
+``` ^
+rasa train core -c config.yml configs/jieba_supervised_embeddings_config.yml -d domain.yml -s test --out comparison_models --runs 3 --percentages 0 5 25 50 70 95
+```
+
+**测试Domain和数据文件是否错误**
+``` ^
+rasa data validate
 ```
 
 ## License

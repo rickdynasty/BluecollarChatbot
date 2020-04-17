@@ -1,24 +1,7 @@
 ## greet
 * greet
   - utter_greet
-
-## affirm with greet
-* greet
-  - utter_greet
-* affirm
-  - utter_affirm
-
-## thank with greet
-* greet
-    - utter_greet
-* thank
-    - utter_thank
-
-## deny with greet
-* greet
-  - utter_greet
-* deny
-  - utter_deny
+> check_greet
 
 ## affirm
 * affirm
@@ -27,32 +10,65 @@
 ## deny 
 * deny
     - utter_deny
-    
-## bye
-* bye
-  - utter_bye
-  
-## bye with greet
-* greet
-  - utter_greet
-* bye
-  - utter_bye
   
 ## thank
 * thank
     - utter_thank
     
-## thank with greet
-* greet
-  - utter_greet
+## bye
+* bye
+  - utter_bye
+
+## greet + affirm
+> check_greet
+* affirm
+  - utter_affirm
+
+## greet + deny
+> check_greet
+* deny
+  - utter_deny
+  
+## greet + bye
+> check_greet
+* bye
+  - utter_bye
+    
+## greet + thank
+> check_greet
 * thank
     - utter_thank
 
-## greet + thanks + goodbye
-* greet
-  - utter_greet
+## greet + thanks + bye
+> check_greet
 * thank
   - utter_thank
+* bye
+  - utter_bye
+  
+## greet + affirm + thanks
+> check_greet
+* affirm
+  - utter_affirm
+* thank
+    - utter_thank
+> check_greet_affirm_thanks
+
+## greet + deny + thanks
+> check_greet
+* deny
+  - utter_deny
+* thank
+    - utter_thank
+> check_greet_deny_thanks
+  
+## greet + affirm + thanks + bye
+> check_greet_affirm_thanks
+* bye
+  - utter_bye
+
+## greet + deny + thanks + bye
+> check_greet_deny_thanks
 * bye
   - utter_bye
     
@@ -64,6 +80,16 @@
 * whatcanudo
     - utter_whatcanudo
 
+## greet + who are you
+> check_greet
+* whoareyou
+    - utter_whoareyou
+    
+## greet + what to do
+> check_greet
+* whatcanudo
+    - utter_whatcanudo
+    
 ## Some question from FAQ
 * faq
     - respond_faq

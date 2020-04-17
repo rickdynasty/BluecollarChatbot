@@ -433,5 +433,5 @@
 ## regex:phone_number  <!-- 正则表达式 -->
 - ((\d{3,4}-)?\d{7,8})|(((\+86)|(86))?(1)\d{10})
 
-## lookup:Custom vocabulary  <!-- specify lookup tables in an external file -->
-data/lookup_tables/vocabulary.txt
+## lookup:entities  <!-- specify lookup tables in an external file -->
+data/lookup_tables/entities.txt
