@@ -128,3 +128,71 @@
     - utter_explain_why_date-time
     - weather_form
     - form{"name": null}
+## interactive_story_1
+* whatcanudo
+    - utter_whatcanudo
+* request_weather{"date-time": "今天"}
+    - slot{"date-time": "今天"}
+    - weather_form
+    - form{"name": "weather_form"}
+    - slot{"date-time": "今天"}
+    - slot{"date-time": "今天"}
+    - slot{"requested_slot": "address"}
+* form: inform{"address": "深圳"}
+    - slot{"address": "深圳"}
+    - form: weather_form
+    - slot{"address": "深圳"}
+
+## interactive_story_2
+    - form{"name": null}
+    - slot{"requested_slot": null}
+* request_weather
+    - weather_form
+    - form{"name": "weather_form"}
+    - slot{"requested_slot": "date-time"}
+    - form: weather_form
+    - slot{"requested_slot": "date-time"}
+* form: inform{"date_time": "明天"}
+    - form: weather_form
+    - slot{"date-time": "明天"}
+    - slot{"requested_slot": "address"}
+    - form: weather_form
+    - slot{"requested_slot": "address"}
+* form: request_weather{"address": "广州"}
+    - slot{"address": "广州"}
+    - form: weather_form
+    - slot{"address": "广州"}
+
+## interactive_story_3
+    - form{"name": null}
+    - slot{"requested_slot": null}
+* inform{"address": "珠海", "date_time": "今天"}
+    - slot{"address": "珠海"}
+    - weather_form
+    - form{"name": "weather_form"}
+    - slot{"address": "珠海"}
+    - slot{"address": "珠海"}
+    - slot{"requested_slot": "date-time"}
+* form: inform{"date_time": "后天"}
+    - form: weather_form
+    - slot{"date-time": "后天"}
+
+## interactive_story_4
+    - form{"name": null}
+    - slot{"requested_slot": null}
+* request_weather
+    - weather_form
+    - form{"name": "weather_form"}
+    - slot{"requested_slot": "date-time"}
+* form: inform{"date_time": "明天"}
+    - form: weather_form
+    - slot{"date-time": "明天"}
+    - slot{"requested_slot": "address"}
+    - form: weather_form
+    - slot{"requested_slot": "address"}
+* form: explain
+    - form: weather_form
+* form: request_weather{"address": "常德"}
+    - slot{"address": "常德"}
+    - form: weather_form
+    - slot{"address": "常德"}

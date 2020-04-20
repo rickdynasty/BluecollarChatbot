@@ -1,100 +1,86 @@
+actions:
+- action_default_fallback
+- respond_faq
+- utter_affirm
+- utter_ask_address
+- utter_ask_date-time
+- utter_bye
+- utter_default
+- utter_deny
+- utter_explain_why_address
+- utter_explain_why_date-time
+- utter_greet
+- utter_thank
+- utter_whatcanudo
+- utter_whoareyou
+entities:
+- address
+- date-time
+- name
+forms:
+- weather_form
 intents:
-  - greet
-  - affirm
-  - bye
-  - explain
-  - whoareyou
-  - whatcanudo
-  - thank
-  - deny
-  - faq
-  - request_weather
-  - inform
-
-#requested_slot特征化并为其分配分类类型，这样Core在进行预测时会注意该插槽的值，而未特征化的插槽仅用于存储信息。
+- inform
+- explain
+- whatcanudo
+- request_weather
+- greet
+- affirm
+- bye
+- whoareyou
+- thank
+- deny
+- faq
+responses:
+  utter_affirm:
+  - text: 嗯嗯，好的！
+  - text: 嗯嗯，很开心能够帮您解决问题~
+  - text: 嗯嗯，还需要什么我能够帮助您的呢？
+  utter_ask_address:
+  - text: 请问，您要查下哪个地方的天气？
+  utter_ask_date-time:
+  - text: 请问，您要查询哪天的天气？
+  utter_bye:
+  - text: Bye
+  - text: 再见
+  - text: 拜拜
+  - text: 虽然我有万般舍不得，但是天下没有不散的宴席~祝您安好！
+  - text: 期待下次再见！
+  - text: 嗯嗯，下次需要时随时记得我哟~
+  - text: see you!
+  utter_default:
+  - text: 诶呀~o(╯□╰)o，小爱没听懂，我会努力成长的 (*^▽^*)~
+  utter_deny:
+  - text: 主人，您不开心吗？不要离开我哦
+  - text: 怎么了，主人？
+  utter_explain_why_address:
+  - text: 我们需要知道你想知道具体哪个地方的天气！
+  utter_explain_why_date-time:
+  - text: 我们需要知道你想知道具体哪天的天气！
+  utter_greet:
+  - text: Hey! How are you?
+  - text: 您好！请问我有什么可以帮到您吗？
+  - text: 您好！很高兴为您服务。请说出您要查询的功能？
+  utter_thank:
+  - text: 嗯呢。不用客气~
+  - text: 这是我应该做的，主人~
+  - text: 嗯嗯，合作愉快！
+  utter_whatcanudo:
+  - text: 您好！很高兴为您服务，你可以和我聊天，我也可以查询天气哦~
+  utter_whoareyou:
+  - text: 您好！我是小爱，您的AI助理
+  - text: 我是小爱~呀，您的AI助理
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60
 slots:
-  date-time:
-    type: unfeaturized
   address:
+    type: unfeaturized
+  date-time:
     type: unfeaturized
   requested_slot:
     type: categorical
     values:
-      - date-time
-      - address
-
-entities:
-  - date-time
-  - address
-  - name
-
-actions:
-  - utter_affirm
-  - utter_greet
-  - utter_bye
-  - utter_whoareyou
-  - utter_whatcanudo
-  - utter_thank
-  - utter_deny
-  - respond_faq
-  - utter_explain_why_address
-  - utter_explain_why_date-time
-  - action_default_fallback
-
-forms:
-  - weather_form
-
-responses:
-  utter_affirm:
-    - text: "嗯嗯，好的！"
-    - text: "嗯嗯，很开心能够帮您解决问题~"
-    - text: "嗯嗯，还需要什么我能够帮助您的呢？"
-
-  utter_greet:
-    - text: "Hey! How are you?"
-    - text: "您好！请问我有什么可以帮到您吗？"
-    - text: "您好！很高兴为您服务。请说出您要查询的功能？"
-
-  utter_bye:
-    - text: "Bye"
-    - text: "再见"
-    - text: "拜拜"
-    - text: "虽然我有万般舍不得，但是天下没有不散的宴席~祝您安好！"
-    - text: "期待下次再见！"
-    - text: "嗯嗯，下次需要时随时记得我哟~"
-    - text: "see you!"
-
-  utter_deny:
-    - text: "主人，您不开心吗？不要离开我哦"
-    - text: "怎么了，主人？"
-
-  utter_thank:
-    - text: "嗯呢。不用客气~"
-    - text: "这是我应该做的，主人~"
-    - text: "嗯嗯，合作愉快！"
-
-  utter_whoareyou:
-    - text: "您好！我是小爱，您的AI助理"
-    - text: "我是小爱~呀，您的AI助理"
-
-  utter_whatcanudo:
-    - text: "您好！很高兴为您服务，你可以和我聊天，我也可以查询天气哦~"
-
-  utter_ask_date-time:
-    - text: "请问，您要查询哪天的天气？"
-
-  utter_ask_address:
-    - text: "请问，您要查下哪个地方的天气？"
-
-  utter_explain_why_address:
-    - text: "我们需要知道你想知道具体哪个地方的天气！"
-
-  utter_explain_why_date-time:
-    - text: "我们需要知道你想知道具体哪天的天气！"
-
-  utter_default:
-    - text: "诶呀~o(╯□╰)o，小爱没听懂，我会努力成长的 (*^▽^*)~"
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+    - date-time
+    - address
+    - __other__
