@@ -3,17 +3,17 @@
 language: "zh"
 
 pipeline:
-  - name: "MitieNLP"
-    model: "data/total_word_feature_extractor_zh.dat"
-  - name: "JiebaTokenizer"
-    dictionary_path: "data/dict"
-  - name: "MitieEntityExtractor"
-  - name: "EntitySynonymMapper"
-  - name: "RegexFeaturizer"
-  - name: "MitieFeaturizer"
-  - name: "SklearnIntentClassifier"
-  - name: ResponseSelector
-    epochs: 100
+- name: "MitieNLP"
+  model: "data/total_word_feature_extractor_zh.dat"
+- name: "JiebaTokenizer"
+  dictionary_path: "data/dict"
+- name: "MitieEntityExtractor"
+- name: "EntitySynonymMapper"
+- name: "RegexFeaturizer"
+- name: "MitieFeaturizer"
+- name: "SklearnIntentClassifier"
+- name: ResponseSelector
+  epochs: 100
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
@@ -25,10 +25,10 @@ pipeline:
 #   3、没有一个对话策略的预测结果的置信度高于core_threshold
 policies:
   - name: TEDPolicy
-    epochs: 500
+    epochs: 100
     max_history: 5
   - name: FallbackPolicy
     fallback_action_name: 'action_default_fallback'
   - name: MemoizationPolicy
-  - name: FormPolicy
   - name: MappingPolicy
+  - name: FormPolicy

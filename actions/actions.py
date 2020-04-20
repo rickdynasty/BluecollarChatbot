@@ -1,32 +1,20 @@
-from typing import Dict, Text, Any, List, Union
-
 from rasa_sdk import Tracker, Action
 from rasa_sdk.events import UserUtteranceReverted, Restarted
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
-
-from actions.ChatApis import get_response
-from actions.WeatherApis import get_weather_by_day
 from requests import (
     ConnectionError,
     HTTPError,
     TooManyRedirects,
     Timeout
 )
+from typing import Dict, Text, Any, List, Union
+
+from actions.ChatApis import get_response
+from actions.WeatherApis import get_weather_by_day
 from log.BCLog import log
 
 
-class ActionGreetUser(Action):
-    """Revertible mapped action for utter_greet"""
-
-    def name(self):
-        return "action_greet"
-
-    def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_template("utter_greet", tracker)
-        return [UserUtteranceReverted()]
-		
-		
 class WeatherForm(FormAction):
     """Collects sales information and adds it to the spreadsheet"""
 
@@ -37,7 +25,7 @@ class WeatherForm(FormAction):
     def required_slots(tracker: Tracker) -> List[Text]:
         """A list of required slots that the form has to fill"""
 
-        return ["date-time", "address"]
+        return ["date-time", "address", ]
 
     def submit(
             self,
@@ -72,10 +60,12 @@ class WeatherForm(FormAction):
             "address": [
                 self.from_entity(entity="address"),
                 self.from_text(not_intent="affirm"),
+                self.from_text(intent="inform"),
             ],
             "date-time": [
                 self.from_entity(entity="date-time"),
                 self.from_text(not_intent="affirm"),
+                self.from_text(intent="inform"),
             ],
         }
 
@@ -141,12 +131,11 @@ class ActionDefaultFallback(Action):
 
     def run(self, dispatcher, tracker, domain):
         log.info("call ActionDefaultFallback run o(╯□╰)o")
-        # 访问图灵机器人API(闲聊)
-        text = tracker.latest_message.get('text')
-        message = get_response(text)
-        if message is not None:
-            dispatcher.utter_message(message)
-        else:
-            dispatcher.utter_template('utter_default', tracker, silent_fail=True)
+        # # 访问图灵机器人API(闲聊)
+        # text = tracker.latest_message.get('text')
+        # message = get_response(text)
+        # if message is not None:
+        #     dispatcher.utter_message(message)
+        # else:
+        dispatcher.utter_template('utter_default', tracker, silent_fail=True)
         return [UserUtteranceReverted()]
-

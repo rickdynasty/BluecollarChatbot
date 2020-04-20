@@ -89,6 +89,14 @@ rasa train core -c config.yml configs/jieba_supervised_embeddings_config.yml -d 
 rasa data validate
 ```
 
+**交互式学习**
+``` ^
+//启动操作服务器
+rasa run actions --actions actions&
+//启动交互式学习模式
+rasa interactive -m models/20190515-135859.tar.gz --endpoints endpoints.yml
+```
+  
 ## License
 > ```
 > Copyright 2020 chengling
