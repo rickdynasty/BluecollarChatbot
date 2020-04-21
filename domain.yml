@@ -77,9 +77,10 @@ responses:
 
 slots:
   address:
-    type: unfeaturized
+    type: text
   date_time:
     type: unfeaturized
+    initial_value: "今天"
   requested_slot:
     type: categorical
     values:
