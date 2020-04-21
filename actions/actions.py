@@ -59,12 +59,10 @@ class WeatherForm(FormAction):
         return {
             "address": [
                 self.from_entity(entity="address"),
-                self.from_text(not_intent="affirm"),
                 self.from_text(intent="inform"),
             ],
             "date-time": [
                 self.from_entity(entity="date-time"),
-                self.from_text(not_intent="affirm"),
                 self.from_text(intent="inform"),
             ],
         }

@@ -391,6 +391,7 @@
 - 帮我查查[佛山](address)这[周六](date-time)的天气
 - [今天](date-time)会下雨吗
 - 要带伞吗
+- 会放晴吗
 - [广州](address)
 - 天气咋样
 - [常德](address)
@@ -408,6 +409,7 @@
 - 请告诉我[武汉](address)的天气
 - 还在[北京](address)
 - [长沙](address)的
+- 我在[深圳](address)
 - 我现在在[敦煌](address)
 - [上海](address)的天气
 - [今天](date_time)的
@@ -417,6 +419,9 @@
 - [明天](date_time)
 - [后天](date_time)
 - [今天](date_time)
+- [明天](date_time)的
+- [后天](date_time)的
+- [今天](date_time)的
 - [星期一](date_time)
 - [星期二](date_time)
 - [星期三](date_time)
@@ -453,6 +458,8 @@
 - 天晴
 - 带伞
 - 气温
+- 太阳
+- 放晴
 
 ## synonym:星期七
 - 星期天
