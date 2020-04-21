@@ -90,24 +90,11 @@
 * whatcanudo
     - utter_whatcanudo
     
-## Some question from FAQ
-* faq
-    - respond_faq
-    
 ## request weather
 * request_weather
     - weather_form                  <!--运行weather_form Action-->
     - form{"name": "weather_form"}  <!--激活这个form-->
     - form{"name": null}            <!--停用这个form-->
-    
-## just request weather, continue
-* request_weather
-    - weather_form
-    - form{"name": "weather_form"}
-* faq
-    - respond_faq
-    - weather_form  
-    - form{"name": null}
     
 ## explain address
 * request_weather
@@ -119,24 +106,24 @@
     - weather_form
     - form{"name": null}
 
-## explain date-time
+## explain date_time
 * request_weather
     - weather_form
     - form{"name": "weather_form"}
-    - slot{"requested_slot": "date-time"}
+    - slot{"requested_slot": "date_time"}
 * explain
-    - utter_explain_why_date-time
+    - utter_explain_why_date_time
     - weather_form
     - form{"name": null}
 ## interactive_story_1
 * whatcanudo
     - utter_whatcanudo
-* request_weather{"date-time": "今天"}
-    - slot{"date-time": "今天"}
+* request_weather{"date_time": "今天"}
+    - slot{"date_time": "今天"}
     - weather_form
     - form{"name": "weather_form"}
-    - slot{"date-time": "今天"}
-    - slot{"date-time": "今天"}
+    - slot{"date_time": "今天"}
+    - slot{"date_time": "今天"}
     - slot{"requested_slot": "address"}
 * form: inform{"address": "深圳"}
     - slot{"address": "深圳"}
@@ -149,12 +136,12 @@
 * request_weather
     - weather_form
     - form{"name": "weather_form"}
-    - slot{"requested_slot": "date-time"}
+    - slot{"requested_slot": "date_time"}
     - form: weather_form
-    - slot{"requested_slot": "date-time"}
+    - slot{"requested_slot": "date_time"}
 * form: inform{"date_time": "明天"}
     - form: weather_form
-    - slot{"date-time": "明天"}
+    - slot{"date_time": "明天"}
     - slot{"requested_slot": "address"}
     - form: weather_form
     - slot{"requested_slot": "address"}
@@ -172,10 +159,10 @@
     - form{"name": "weather_form"}
     - slot{"address": "珠海"}
     - slot{"address": "珠海"}
-    - slot{"requested_slot": "date-time"}
+    - slot{"requested_slot": "date_time"}
 * form: inform{"date_time": "后天"}
     - form: weather_form
-    - slot{"date-time": "后天"}
+    - slot{"date_time": "后天"}
 
 ## interactive_story_4
     - form{"name": null}
@@ -183,10 +170,10 @@
 * request_weather
     - weather_form
     - form{"name": "weather_form"}
-    - slot{"requested_slot": "date-time"}
+    - slot{"requested_slot": "date_time"}
 * form: inform{"date_time": "明天"}
     - form: weather_form
-    - slot{"date-time": "明天"}
+    - slot{"date_time": "明天"}
     - slot{"requested_slot": "address"}
     - form: weather_form
     - slot{"requested_slot": "address"}

@@ -63,7 +63,7 @@
 ## Testing request weather with a form
 * greet: hi
     - utter_greet
-* request_weather: 查下[今天](date-time)[北京](address)的天气
+* request_weather: 查下[今天](date_time)[北京](address)的天气
     - weather_form
     - form{"name": "weather_form"}
 * thank: thanks
@@ -72,7 +72,7 @@
 ## Testing request weather with a form and unexpected user input
 * greet: hi
     - utter_greet
-* request_weather: 查下[今天](date-time)的天气
+* request_weather: 查下[今天](date_time)的天气
     - weather_form
     - form{"name": "weather_form"}
 <!-- The user sends a message which should not be handled by the form. -->

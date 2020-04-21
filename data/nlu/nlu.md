@@ -359,37 +359,37 @@
 
 ## intent:request_weather
 - 天气
-- [今天](date-time)的天气怎样
-- [今天](date-time)的天气是怎样
+- [今天](date_time)的天气怎样
+- [今天](date_time)的天气是怎样
 - 出门要带伞么
-- [今天](date-time)会下雨么
-- 小爱，[今天](date-time)会下雨么
-- [今天](date-time)的空气怎样
+- [今天](date_time)会下雨么
+- 小爱，[今天](date_time)会下雨么
+- [今天](date_time)的空气怎样
 - 查询天气
 - 帮我查天气信息
-- 我想知道[明天](date-time)的天气
-- [星期一](date-time)的天气
-- [星期二](date-time)的天气
-- [星期三](date-time)的天气
-- [星期四](date-time)的天气
-- [星期五](date-time)的天气
-- [星期六](date-time)的天气
-- [星期七](date-time)的天气
-- [礼拜一](date-time)的天气
-- [礼拜二](date-time)的天气
-- [今天](date-time)的天气怎么样
-- 帮我查下[后天](date-time)的天气
+- 我想知道[明天](date_time)的天气
+- [星期一](date_time)的天气
+- [星期二](date_time)的天气
+- [星期三](date_time)的天气
+- [星期四](date_time)的天气
+- [星期五](date_time)的天气
+- [星期六](date_time)的天气
+- [星期七](date_time)的天气
+- [礼拜一](date_time)的天气
+- [礼拜二](date_time)的天气
+- [今天](date_time)的天气怎么样
+- 帮我查下[后天](date_time)的天气
 - 查下[广州](address)的天气怎么样
-- 查询[深圳](address)[今天](date-time)有没有雨
-- 查询[北京](address)[明天](date-time)会不会下雨
-- 查询[东莞](address)[后天](date-time)温度多少
+- 查询[深圳](address)[今天](date_time)有没有雨
+- 查询[北京](address)[明天](date_time)会不会下雨
+- 查询[东莞](address)[后天](date_time)温度多少
 - 查询[惠州](address)的天气
 - [长沙](address)的天气
 - 查询[广州](address)的天气
-- [深圳](address)[明天](date-time)的天气
-- 查下[今天](date-time)[上海](address)的天气
-- 帮我查查[佛山](address)这[周六](date-time)的天气
-- [今天](date-time)会下雨吗
+- [深圳](address)[明天](date_time)的天气
+- 查下[今天](date_time)[上海](address)的天气
+- 帮我查查[佛山](address)这[周六](date_time)的天气
+- [今天](date_time)会下雨吗
 - 要带伞吗
 - 会放晴吗
 - [广州](address)
@@ -469,5 +469,8 @@
 ## regex:phone_number
 - ((\d{3,4}-)?\d{7,8})|(((\+86)|(86))?(1)\d{10})
 
-## lookup:entities
-  data/lookup_tables/entities.txt
+## lookup: date_time
+data/nlu/lookups/date_time.txt
+
+## lookup: address
+data/nlu/lookups/address.txt

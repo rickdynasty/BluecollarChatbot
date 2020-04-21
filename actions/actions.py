@@ -25,7 +25,7 @@ class WeatherForm(FormAction):
     def required_slots(tracker: Tracker) -> List[Text]:
         """A list of required slots that the form has to fill"""
 
-        return ["date-time", "address", ]
+        return ["date_time", "address", ]
 
     def submit(
             self,
@@ -36,7 +36,7 @@ class WeatherForm(FormAction):
         """Define what the form has to do
             after all required slots are filled"""
         address = tracker.get_slot('address')
-        date_time = tracker.get_slot('date-time')
+        date_time = tracker.get_slot('date_time')
 
         log.info("tracker.get_slot address:%s  date_time:%s", address, date_time)
         date_time_number = text_date_to_number_date(date_time)
@@ -61,8 +61,8 @@ class WeatherForm(FormAction):
                 self.from_entity(entity="address"),
                 self.from_text(intent="inform"),
             ],
-            "date-time": [
-                self.from_entity(entity="date-time"),
+            "date_time": [
+                self.from_entity(entity="date_time"),
                 self.from_text(intent="inform"),
             ],
         }
