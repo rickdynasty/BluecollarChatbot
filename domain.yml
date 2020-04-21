@@ -1,24 +1,6 @@
-actions:
-- action_default_fallback
-- respond_faq
-- utter_affirm
-- utter_ask_address
-- utter_ask_date_time
-- utter_bye
-- utter_default
-- utter_deny
-- utter_explain_why_address
-- utter_explain_why_date_time
-- utter_greet
-- utter_thank
-- utter_whatcanudo
-- utter_whoareyou
-entities:
-- address
-- date_time
-- name
-forms:
-- weather_form
+session_config:
+  session_expiration_time: 60.0
+  carry_over_slots_to_new_session: true
 intents:
 - request_weather
 - whatcanudo
@@ -31,6 +13,25 @@ intents:
 - whoareyou
 - thank
 - deny
+- faq/ask_channels
+- faq/ask_languages
+- faq/ask_rasax
+entities:
+- address
+- date_time
+- name
+slots:
+  address:
+    type: text
+  date_time:
+    type: unfeaturized
+    initial_value: 今天
+  requested_slot:
+    type: categorical
+    values:
+    - date_time
+    - address
+    - __other__
 responses:
   utter_affirm:
   - text: 嗯嗯，好的！
@@ -70,18 +71,20 @@ responses:
   utter_whoareyou:
   - text: 您好！我是小爱，您的AI助理
   - text: 我是小爱~呀，您的AI助理
-session_config:
-  carry_over_slots_to_new_session: true
-  session_expiration_time: 60
-slots:
-  address:
-    type: text
-  date_time:
-    initial_value: 今天
-    type: unfeaturized
-  requested_slot:
-    type: categorical
-    values:
-    - date_time
-    - address
-    - __other__
+actions:
+- action_default_fallback
+- respond_faq
+- utter_affirm
+- utter_ask_address
+- utter_ask_date_time
+- utter_bye
+- utter_default
+- utter_deny
+- utter_explain_why_address
+- utter_explain_why_date_time
+- utter_greet
+- utter_thank
+- utter_whatcanudo
+- utter_whoareyou
+forms:
+- weather_form
