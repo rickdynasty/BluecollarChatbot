@@ -24,3 +24,9 @@ build/
 /local.properties
 .externalNativeBuild
 /config.gradle
+/events.db
+/events.db-shm
+/events.db-wal
+/rasa.db
+/rasa.db-shm
+/rasa.db-wal

@@ -330,6 +330,14 @@
 - 对不起，现在不行
 - 还是不想告诉
 
+## intent:continue
+- 继续
+- 继续吧
+- 我考虑了，还是继续流程
+- 还是继续
+- 还是不中断了
+- continue
+
 ## intent:faq/ask_channels
 - rasa支持哪些通讯渠道？
 - 支持什么渠道？

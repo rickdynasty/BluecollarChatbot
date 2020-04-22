@@ -96,6 +96,16 @@
     - form{"name": "weather_form"}  <!--激活这个form-->
     - form{"name": null}            <!--停用这个form-->
     
+## unhappy path - request weather
+* request_weather
+    - weather_form
+    - form{"name": "weather_form"}
+* bye
+    - utter_ask_continue
+* affirm
+    - action_deactivate_form
+    - form{"name": null}
+    
 ## explain address
 * request_weather
     - weather_form
