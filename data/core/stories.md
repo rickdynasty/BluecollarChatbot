@@ -200,3 +200,8 @@
     - slot{"city": "萍乡"}
     - form: weather_form
     - slot{"city": "萍乡"}
+
+## greet + ask familyplanning
+> check_greet
+* ask_fp_certificate OR ask_fp_service_card OR deal_with_family_planning OR ask_fp_expatriate_hk_tw_macao OR ask_fp_maternity_insurance OR ask_fp_only_child_reward OR ask_fp_technical_services OR determine_fp_surgical_complications OR ask_fp_surgical_complications_assistance
+    - action_family_planning

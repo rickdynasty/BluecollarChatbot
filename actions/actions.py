@@ -1,3 +1,5 @@
+from typing import Dict, Text, Any, List, Union
+
 from rasa_sdk import Tracker, Action
 from rasa_sdk.events import UserUtteranceReverted, Restarted
 from rasa_sdk.executor import CollectingDispatcher
@@ -8,11 +10,11 @@ from requests import (
     TooManyRedirects,
     Timeout
 )
-from typing import Dict, Text, Any, List, Union
 
-from actions.ChatApis import get_response
 from actions.WeatherApis import get_weather_by_day
 from log.BCLog import log
+
+EventType = Dict[Text, Any]
 
 
 class WeatherForm(FormAction):
@@ -145,3 +147,28 @@ class ActionDefaultFallback(Action):
         # 分支流处理，精准映射到 responses
         dispatcher.utter_template('utter_default', tracker, silent_fail=True)
         return [UserUtteranceReverted()]
+
+
+class ActionFamilyPlanning(Action):
+    """Returns the chitchat utterance dependent on the intent"""
+
+    def name(self) -> Text:
+        return "action_family_planning"
+
+    def run(self, dispatcher, tracker, domain) -> List[EventType]:
+        intent = tracker.latest_message["intent"].get("name")
+
+        # retrieve the correct chitchat utterance dependent on the intent
+        if intent in [
+            "ask_fp_certificate",
+            "ask_fp_service_card",
+            "deal_with_family_planning",
+            "ask_fp_expatriate_hk_tw_macao",
+            "ask_fp_maternity_insurance",
+            "ask_fp_only_child_reward",
+            "ask_fp_technical_services",
+            "utter_determine_fp_surgical_complications",
+            "ask_fp_surgical_complications_assistance",
+        ]:
+            dispatcher.utter_message(template=f"utter_{intent}")
+        return []
