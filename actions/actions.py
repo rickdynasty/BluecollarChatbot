@@ -25,7 +25,7 @@ class WeatherForm(FormAction):
     def required_slots(tracker: Tracker) -> List[Text]:
         """A list of required slots that the form has to fill"""
 
-        return ["date_time", "address", ]
+        return ["date_time", "city", ]
 
     def submit(
             self,
@@ -35,16 +35,17 @@ class WeatherForm(FormAction):
     ) -> List[Dict]:
         """Define what the form has to do
             after all required slots are filled"""
-        address = tracker.get_slot('address')
+        city = tracker.get_slot('city')
         date_time = tracker.get_slot('date_time')
 
-        log.info("tracker.get_slot address:%s  date_time:%s", address, date_time)
+        log.info("=========call WeatherForm submit=========")
+        log.info("tracker.get_slot city:%s  date_time:%s", city, date_time)
         date_time_number = text_date_to_number_date(date_time)
 
         if isinstance(date_time_number, str):  # parse date_time failed
-            dispatcher.utter_message("暂不支持查询 {} 的天气".format([address, date_time_number]));
+            dispatcher.utter_message("暂不支持查询 {} 的天气".format([city, date_time_number]));
         else:
-            weather_data = get_text_weather_date(address, date_time, date_time_number)
+            weather_data = get_text_weather_date(city, date_time, date_time_number)
             log.info("weather_data is %s", weather_data)
             dispatcher.utter_message(weather_data);
         return [Restarted()]
@@ -55,22 +56,28 @@ class WeatherForm(FormAction):
         - intent: value pairs
         - a whole message
             or a list of them, where a first match will be picked"""
-        log.info("call slot_mappings")
+        log.info("=========call WeatherForm slot_mappings=========")
         return {
-            "address": [
-                self.from_entity(entity="address"),
+            "city": [
+                self.from_entity(entity="city"),
                 self.from_text(intent="inform"),
             ],
             "date_time": [
                 self.from_entity(entity="date_time"),
                 self.from_text(intent="inform"),
+                self.from_trigger_intent(intent="request_weather", value=getCurDateTime())
             ],
         }
 
 
-def get_text_weather_date(address, date_time, date_time_number):
+def getCurDateTime():
+    log.info("=========call getCurDateTime=========")
+    return "明天"
+
+
+def get_text_weather_date(city, date_time, date_time_number):
     try:
-        result = get_weather_by_day(address, date_time_number)
+        result = get_weather_by_day(city, date_time_number)
     except (ConnectionError, HTTPError, TooManyRedirects, Timeout) as e:
         text_message = "{}".format(e)
     else:
@@ -135,5 +142,6 @@ class ActionDefaultFallback(Action):
         # if message is not None:
         #     dispatcher.utter_message(message)
         # else:
+        # 分支流处理，精准映射到 responses
         dispatcher.utter_template('utter_default', tracker, silent_fail=True)
         return [UserUtteranceReverted()]

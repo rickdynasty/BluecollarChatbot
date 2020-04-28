@@ -15,4 +15,4 @@
 - 还是继续吧
 
 ## intent:inform
-- [北京](address)
+- [北京](city)

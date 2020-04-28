@@ -106,13 +106,13 @@
     - action_deactivate_form
     - form{"name": null}
     
-## explain address
+## explain city
 * request_weather
     - weather_form
     - form{"name": "weather_form"}
-    - slot{"requested_slot": "address"}
+    - slot{"requested_slot": "city"}
 * explain
-    - utter_explain_why_address
+    - utter_explain_why_city
     - weather_form
     - form{"name": null}
 
@@ -131,11 +131,11 @@
     - weather_form
     - form{"name": "weather_form"}
     - slot{"date_time": "今天"}
-    - slot{"requested_slot": "address"}
-* form: inform{"address": "深圳"}
-    - slot{"address": "深圳"}
+    - slot{"requested_slot": "city"}
+* form: inform{"city": "深圳"}
+    - slot{"city": "深圳"}
     - form: weather_form
-    - slot{"address": "深圳"}
+    - slot{"city": "深圳"}
 
 ## interactive_story_2
     - form{"name": null}
@@ -144,28 +144,28 @@
     - weather_form
     - form{"name": "weather_form"}
     - slot{"date_time": "今天"}
-    - slot{"requested_slot": "address"}
+    - slot{"requested_slot": "city"}
 * explain
-    - utter_explain_why_address
+    - utter_explain_why_city
     - weather_form
-    - slot{"requested_slot": "address"}
-* form: inform{"address": "长沙"}
-    - slot{"address": "长沙"}
+    - slot{"requested_slot": "city"}
+* form: inform{"city": "长沙"}
+    - slot{"city": "长沙"}
     - form: weather_form
-    - slot{"address": "长沙"}
+    - slot{"city": "长沙"}
 
 ## interactive_story_3
     - form{"name": null}
     - slot{"requested_slot": null}
-* inform{"address": "深圳", "date_time": "今天"}
-    - slot{"address": "深圳"}
+* inform{"city": "深圳", "date_time": "今天"}
+    - slot{"city": "深圳"}
     - slot{"date_time": "今天"}
     - weather_form
     - form{"name": "weather_form"}
     - slot{"date_time": "今天"}
-    - slot{"address": "深圳"}
+    - slot{"city": "深圳"}
     - slot{"date_time": "今天"}
-    - slot{"address": "深圳"}
+    - slot{"city": "深圳"}
 
 ## interactive_story_4
     - form{"name": null}
@@ -174,15 +174,15 @@
     - weather_form
     - form{"name": "weather_form"}
     - slot{"date_time": "今天"}
-    - slot{"requested_slot": "address"}
+    - slot{"requested_slot": "city"}
 * greet
     - utter_greet
     - weather_form
-    - slot{"requested_slot": "address"}
-* form: inform{"address": "商丘"}
-    - slot{"address": "商丘"}
+    - slot{"requested_slot": "city"}
+* form: inform{"city": "商丘"}
+    - slot{"city": "商丘"}
     - form: weather_form
-    - slot{"address": "商丘"}
+    - slot{"city": "商丘"}
 
 ## interactive_story_5
     - form{"name": null}
@@ -191,12 +191,12 @@
     - weather_form
     - form{"name": "weather_form"}
     - slot{"date_time": "今天"}
-    - slot{"requested_slot": "address"}
+    - slot{"requested_slot": "city"}
 * whatcanudo
     - utter_whatcanudo
     - weather_form
-    - slot{"requested_slot": "address"}
-* form: inform{"address": "萍乡"}
-    - slot{"address": "萍乡"}
+    - slot{"requested_slot": "city"}
+* form: inform{"city": "萍乡"}
+    - slot{"city": "萍乡"}
     - form: weather_form
-    - slot{"address": "萍乡"}
+    - slot{"city": "萍乡"}

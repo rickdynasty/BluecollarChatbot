@@ -391,40 +391,40 @@
 - [礼拜二](date_time)的天气
 - [今天](date_time)的天气怎么样
 - 帮我查下[后天](date_time)的天气
-- 查下[广州](address)的天气怎么样
-- 查询[深圳](address)[今天](date_time)有没有雨
-- 查询[北京](address)[明天](date_time)会不会下雨
-- 查询[东莞](address)[后天](date_time)温度多少
-- 查询[惠州](address)的天气
-- [长沙](address)的天气
-- 查询[广州](address)的天气
-- [深圳](address)[明天](date_time)的天气
-- 查下[今天](date_time)[上海](address)的天气
-- 帮我查查[佛山](address)这[周六](date_time)的天气
+- 查下[广州](city)的天气怎么样
+- 查询[深圳](city)[今天](date_time)有没有雨
+- 查询[北京](city)[明天](date_time)会不会下雨
+- 查询[东莞](city)[后天](date_time)温度多少
+- 查询[惠州](city)的天气
+- [长沙](city)的天气
+- 查询[广州](city)的天气
+- [深圳](city)[明天](date_time)的天气
+- 查下[今天](date_time)[上海](city)的天气
+- 帮我查查[佛山](city)这[周六](date_time)的天气
 - [今天](date_time)会下雨吗
 - 要带伞吗
 - 会下雨么
 - 会放晴吗
-- [广州](address)
+- [广州](city)
 - 天气咋样
-- [常德](address)
+- [常德](city)
 
 ## intent:inform
-- 告诉我在[广州](address)的怎么样
-- [武汉](address)
-- 在[北京](address)的呢？
-- 我想知道[杭州](address)的天气
-- 我现在在[上海](address)
-- [佛山](address)的吧
-- 我要查询[乌鲁木齐](address)的天气
-- 查询[深圳](address)的天气
-- [北京](address)的天气怎么样？
-- 请告诉我[武汉](address)的天气
-- 还在[北京](address)
-- [长沙](address)的
-- 我在[深圳](address)
-- 我现在在[敦煌](address)
-- [上海](address)的天气
+- 告诉我在[广州](city)的怎么样
+- [武汉](city)
+- 在[北京](city)的呢？
+- 我想知道[杭州](city)的天气
+- 我现在在[上海](city)
+- [佛山](city)的吧
+- 我要查询[乌鲁木齐](city)的天气
+- 查询[深圳](city)的天气
+- [北京](city)的天气怎么样？
+- 请告诉我[武汉](city)的天气
+- 还在[北京](city)
+- [长沙](city)的
+- 我在[深圳](city)
+- 我现在在[敦煌](city)
+- [上海](city)的天气
 - [今天](date_time)的
 - [明天](date_time)的天气
 - [后天](date_time)的天气
@@ -458,9 +458,9 @@
 - [后天](date_time)的吧
 - 帮我查下[今天](date_time)的
 - 不知道[今天](date_time)的怎么样
-- [深圳](address)
+- [深圳](city)
 - [明天](date_time)
-- [珠海](address)[今天](date_time)的
+- [珠海](city)[今天](date_time)的
 - [后天](date_time)
 
 ## synonym:天气
@@ -485,5 +485,5 @@
 ## lookup: date_time
 data/nlu/lookups/date_time.txt
 
-## lookup: address
-data/nlu/lookups/address.txt
+## lookup: city
+data/nlu/lookups/city.txt

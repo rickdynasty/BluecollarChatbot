@@ -6,7 +6,7 @@
     - form{"name": "weather_form"}
     - slot{"date_time": "今天"}
     - slot{"date_time": "今天"}
-    - slot{"requested_slot": "address"}
+    - slot{"requested_slot": "city"}
 * deny
     - utter_ask_continue
 * affirm
@@ -19,16 +19,16 @@
     - weather_form
     - form{"name": "weather_form"}
     - slot{"date_time": "今天"}
-    - slot{"requested_slot": "address"}
+    - slot{"requested_slot": "city"}
 * deny
     - utter_ask_continue
 * continue
-    - utter_ask_address
+    - utter_ask_city
     - action_listen
-* form: inform{"address": "北京"}
-    - slot{"address": "北京"}
+* form: inform{"city": "北京"}
+    - slot{"city": "北京"}
     - weather_form
-    - slot{"address": "北京"}
+    - slot{"city": "北京"}
 
 ## interactive_story_3
     - form{"name": null}
@@ -37,7 +37,7 @@
     - weather_form
     - form{"name": "weather_form"}
     - slot{"date_time": "今天"}
-    - slot{"requested_slot": "address"}
+    - slot{"requested_slot": "city"}
 * deny
     - utter_ask_continue
 * affirm

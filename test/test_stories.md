@@ -63,7 +63,7 @@
 ## Testing request weather with a form
 * greet: hi
     - utter_greet
-* request_weather: 查下[今天](date_time)[北京](address)的天气
+* request_weather: 查下[今天](date_time)[北京](city)的天气
     - weather_form
     - form{"name": "weather_form"}
 * thank: thanks
@@ -80,6 +80,6 @@
     - utter_whatcanudo
     - weather_form
     - form{"name": null}
-    - slot{"requested_slot": "address"}
+    - slot{"requested_slot": "city"}
 * thank: thanks
     - utter_thank

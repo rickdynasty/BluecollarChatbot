@@ -4,12 +4,13 @@ language: "zh"
 
 pipeline:
   - name: "MitieNLP"
-    model: "data/total_word_feature_extractor_zh.dat"
+    model: "data/total_word_feature_extractor_smt.dat"
   - name: "JiebaTokenizer"
     dictionary_path: "data/dict"
   - name: "MitieEntityExtractor"
-  - name: "EntitySynonymMapper"
   - name: "RegexFeaturizer"
+  - name: "CRFEntityExtractor"
+  - name: "EntitySynonymMapper"
   - name: "MitieFeaturizer"
   - name: "SklearnIntentClassifier"
   - name: ResponseSelector
