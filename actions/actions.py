@@ -74,7 +74,7 @@ class WeatherForm(FormAction):
 
 def getCurDateTime():
     log.info("=========call getCurDateTime=========")
-    return "明天"
+    return "今天"
 
 
 def get_text_weather_date(city, date_time, date_time_number):
@@ -163,11 +163,11 @@ class ActionFamilyPlanning(Action):
             "ask_fp_certificate",
             "ask_fp_service_card",
             "deal_with_family_planning",
-            "ask_fp_expatriate_hk_tw_macao",
+            "ask_fp_expatriate",
             "ask_fp_maternity_insurance",
             "ask_fp_only_child_reward",
             "ask_fp_technical_services",
-            "utter_determine_fp_surgical_complications",
+            "determine_fp_surgical_complications",
             "ask_fp_surgical_complications_assistance",
         ]:
             dispatcher.utter_message(template=f"utter_{intent}")

@@ -221,6 +221,8 @@
 - 是谁？
 - 可以告诉我你的名字吗
 - 你叫什么名字
+- who are you
+- who are u
 
 ## intent:whatcanudo
 - 你支持什么功能
@@ -231,6 +233,8 @@
 - 你能帮我什么
 - 你能帮我做什么
 - 你可以做什么
+- what can you do
+- what can u do
 
 ## intent:thank
 - 谢谢
