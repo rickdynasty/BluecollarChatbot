@@ -1,0 +1,23 @@
+# pretrained_embeddings_spacy管道的优势在于，如果您有一个训练示例，例如：“我想买苹果”，并且要求Rasa预测“买梨”的意图，那么您的模型已经知道“苹果”和“豌豆”这两个词非常相似。
+# 如果您没有足够的培训数据，这将特别有用。
+language: "en"
+
+pipeline:
+- name: "SpacyNLP"
+- name: "SpacyTokenizer"
+- name: "SpacyFeaturizer"
+- name: "RegexFeaturizer"
+- name: "CRFEntityExtractor"
+- name: "EntitySynonymMapper"
+- name: "SklearnIntentClassifier"
+
+policies:
+  - name: TEDPolicy
+    epochs: 500
+    max_history: 5
+  - name: FallbackPolicy
+    fallback_action_name: 'action_default_fallback'
+  - name: MemoizationPolicy
+    max_history: 5
+  - name: FormPolicy
+  - name: MappingPolicy
