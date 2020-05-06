@@ -201,7 +201,10 @@
     - form: weather_form
     - slot{"city": "萍乡"}
 
-## greet + ask familyplanning
-> check_greet
+## ask familyplanning
 * ask_fp_certificate OR ask_fp_service_card OR deal_with_family_planning OR ask_fp_expatriate OR ask_fp_maternity_insurance OR ask_fp_only_child_reward OR ask_fp_technical_services OR determine_fp_surgical_complications OR ask_fp_surgical_complications_assistance
-    - action_family_planning
+    - action_pasc_smt
+    
+## ask certification 
+* ask_cer_binding_info OR cer_modify_info OR cer_special_characters OR expatriate_cer_by_app OR hk_tw_cer_by_app OR cer_by_app OR cer_business_registration OR cer_who_need OR cer_cancel OR cer_setup_market_reg_contact OR cer_not_exist OR cer_format_error OR cer_fail
+    - action_pasc_smt

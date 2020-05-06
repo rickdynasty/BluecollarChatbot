@@ -14,20 +14,45 @@ actions:
   - utter_thank
   - utter_whatcanudo
   - utter_whoareyou
-  - action_family_planning
+  - action_pasc_smt
 entities:
-  - date_time
-  - province
-  - city
-  - district
-  - name
-  - family_planning
+  # 动作实体
+  - modify #变更、更改、修改
+  - perform #执行、进行、操作
+  - transact #办理(**业务)
+  - cancel #取消
+  - binding #绑定
+  - setup #设置
+  - search #查、查找、查询
+  - apply #申请
+  - extract #提取(公积金、货款)
+  - arrive #到账、到达
+  # w询问实体
+  - how  #怎么办、怎么弄、怎么做、如何
+  - howlong  #多久、多长时间
+  - who #谁、那些人、什么人
+  - what #什么是、是什么、什么
+  - where #哪里、在哪里
+  - why #为什么
+  # 状态实体
+  - not_exist #不存在
+  - not_pass #不通过、没能通过、无法通过
+
+  # 信息实体 - 天气
+  - date_time #日期
+  - city  #城市
+
+  # 信息实体 - 计划生育
+  - province #省份
+  - district #区、县
+  - name #名字
   - fp_violate
   - fp_certificate
   - fp_state_certificate
   - fp_service_card
   - birth_registration
   - expatriate
+  - HKTWMacao
   - maternity_insurance
   - mi_costs
   - only_child
@@ -35,6 +60,20 @@ entities:
   - fp_technical_services
   - fp_surgical_complications
   - assistance
+  - child
+
+  # 信息实体 - 实名认证
+  - certification #实名认证
+  - certification_lib #实名认证库
+  - provident_fund #公积金
+  - captcha #验证码
+  - special_characters #特殊字符、生僻字
+  - i_shenzhen #i深圳
+  - information #信息
+  - sys_error #系统错误
+  - business_registration #商事登记
+  - format_error #格式错误
+  - market_reg_contact #市场监管联系人
 forms:
   - weather_form
 intents:
@@ -62,7 +101,19 @@ intents:
   - ask_fp_technical_services
   - determine_fp_surgical_complications
   - ask_fp_surgical_complications_assistance
-  - children
+  - cer_fail
+  - cer_format_error
+  - cer_not_exist
+  - cer_setup_market_reg_contact
+  - cer_cancel
+  - cer_who_need
+  - cer_business_registration
+  - cer_by_app
+  - hk_tw_cer_by_app
+  - expatriate_cer_by_app
+  - cer_special_characters
+  - cer_modify_info
+  - ask_cer_binding_info
 
 responses:
   utter_affirm:
@@ -125,6 +176,32 @@ responses:
     - text: "计划生育手术并发症鉴定"
   utter_ask_fp_surgical_complications_assistance:
     - text: "计划生育手术并发症人员特别扶助"
+  utter_cer_fail:
+    - text: "实名认证时人脸识别无法通过该怎么办？"
+  utter_cer_format_error:
+    - text: "实名认证时提示证件格式不对该怎么办？"
+  utter_cer_not_exist:
+    - text: "实名认证时显示实名认证库中无此号该如何处理？"
+  utter_cer_setup_market_reg_contact:
+    - text: "年报实名认证无法通过，如何设置市场监管联系人"
+  utter_cer_cancel:
+    - text: "如何取消实名认证？"
+  utter_cer_who_need:
+    - text: "哪些人需实名认证？"
+  utter_cer_business_registration:
+    - text: "商事登记实名认证"
+  utter_cer_by_app:
+    - text: "怎样在“i深圳”APP上进行实名认证？"
+  utter_hk_tw_cer_by_app:
+    - text: "港澳台居民如何在i深圳进行实名认证？"
+  utter_expatriate_cer_by_app:
+    - text: "外籍人士如何在i深圳进行实名认证？"
+  utter_cer_special_characters:
+    - text: "姓名中含生僻字或特殊字符（.）如何进行实名认证？"
+  utter_cer_modify_info:
+    - text: "如何更改实名认证的信息（姓名/电话等）？"
+  utter_ask_cer_binding_info:
+    - text: "实名认证是否可同时绑定孩子的信息？"
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60.0

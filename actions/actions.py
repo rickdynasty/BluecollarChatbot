@@ -145,15 +145,15 @@ class ActionDefaultFallback(Action):
         #     dispatcher.utter_message(message)
         # else:
         # 分支流处理，精准映射到 responses
-        dispatcher.utter_template('utter_default', tracker, silent_fail=True)
+        dispatcher.utter_template(template="utter_default")
         return [UserUtteranceReverted()]
 
 
-class ActionFamilyPlanning(Action):
+class ActionPascSmt(Action):
     """Returns the chitchat utterance dependent on the intent"""
 
     def name(self) -> Text:
-        return "action_family_planning"
+        return "action_pasc_smt"
 
     def run(self, dispatcher, tracker, domain) -> List[EventType]:
         intent = tracker.latest_message["intent"].get("name")
@@ -169,6 +169,20 @@ class ActionFamilyPlanning(Action):
             "ask_fp_technical_services",
             "determine_fp_surgical_complications",
             "ask_fp_surgical_complications_assistance",
+            "ask_fp_certificate",
+            "cer_fail",
+            "cer_format_error",
+            "cer_not_exist",
+            "cer_setup_market_reg_contact",
+            "cer_cancel",
+            "cer_who_need",
+            "cer_business_registration",
+            "cer_by_app",
+            "hk_tw_cer_by_app",
+            "expatriate_cer_by_app",
+            "cer_special_characters",
+            "cer_modify_info",
+            "ask_cer_binding_info",
         ]:
             dispatcher.utter_message(template=f"utter_{intent}")
         return []
