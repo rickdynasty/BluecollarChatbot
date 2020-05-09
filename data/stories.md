@@ -1,4 +1,3 @@
-
 ## interactive_story_1
 * request_weather{"date_time": "今天"}
     - slot{"date_time": "今天"}

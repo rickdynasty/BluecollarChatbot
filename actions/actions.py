@@ -145,7 +145,7 @@ class ActionDefaultFallback(Action):
         #     dispatcher.utter_message(message)
         # else:
         # 分支流处理，精准映射到 responses
-        dispatcher.utter_template(template="utter_default")
+        dispatcher.utter_message(template="utter_default")
         return [UserUtteranceReverted()]
 
 
@@ -159,30 +159,5 @@ class ActionPascSmt(Action):
         intent = tracker.latest_message["intent"].get("name")
 
         # retrieve the correct chitchat utterance dependent on the intent
-        if intent in [
-            "ask_fp_certificate",
-            "ask_fp_service_card",
-            "deal_with_family_planning",
-            "ask_fp_expatriate",
-            "ask_fp_maternity_insurance",
-            "ask_fp_only_child_reward",
-            "ask_fp_technical_services",
-            "determine_fp_surgical_complications",
-            "ask_fp_surgical_complications_assistance",
-            "ask_fp_certificate",
-            "cer_fail",
-            "cer_format_error",
-            "cer_not_exist",
-            "cer_setup_market_reg_contact",
-            "cer_cancel",
-            "cer_who_need",
-            "cer_business_registration",
-            "cer_by_app",
-            "hk_tw_cer_by_app",
-            "expatriate_cer_by_app",
-            "cer_special_characters",
-            "cer_modify_info",
-            "ask_cer_binding_info",
-        ]:
-            dispatcher.utter_message(template=f"utter_{intent}")
+        dispatcher.utter_message(template=f"utter_{intent}")
         return []
