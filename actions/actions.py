@@ -16,6 +16,8 @@ from log.BCLog import log
 
 EventType = Dict[Text, Any]
 
+IS_INTENT_MESSAGE_MAPPING_PATH = "actions/is_intent_msg.txt"
+
 
 class WeatherForm(FormAction):
     """Collects sales information and adds it to the spreadsheet"""
@@ -145,8 +147,53 @@ class ActionDefaultFallback(Action):
         #     dispatcher.utter_message(message)
         # else:
         # 分支流处理，精准映射到 responses
-        dispatcher.utter_message(template="utter_default")
+        dispatcher.utter_template('utter_default', tracker, silent_fail=True)
         return [UserUtteranceReverted()]
+
+
+def getIntentMsgMapFromFile(filePath, encodingFormat='UTF-8'):
+    f = open(filePath, 'r', encoding=encodingFormat)  # 返回一个文件对象
+    line = f.readline()  # 调用文件的 readline()方法
+    lineCount = 0
+    intent_mappings = {}
+    while line:
+        lineCount += 1
+        line = line.strip()
+        if len(line) == 0:
+            log.info("(line " + str(lineCount) + ") 是空行")
+            line = f.readline()
+            continue
+
+        titems = line.split('>')
+        if 2 != len(titems):
+            log.info("(line " + str(lineCount) + ") 不合符规范[将丢弃]：" + line)
+            line = f.readline()
+            continue
+
+        strkey = titems[0].lower()
+        strtemp = titems[1].strip()
+        intent_mappings[strkey] = strtemp
+        line = f.readline()
+    f.close()
+    return intent_mappings
+
+
+# 闲聊和问答库
+class ActionPascChatQA(Action):
+    """Returns the chitchat utterance dependent on the intent"""
+
+    def name(self) -> Text:
+        return "action_pasc_chatqa"
+
+    # def __init__(self) -> None:
+    #     self.chatqa_intent_mappings = getIntentMsgMapFromFile(CHATQA_INTENT_MESSAGE_MAPPING_PATH)
+
+    def run(self, dispatcher, tracker, domain) -> List[EventType]:
+        intent = tracker.latest_message["intent"].get("name")
+
+        # retrieve the correct chitchat utterance dependent on the intent
+        dispatcher.utter_message(template=f"utter_{intent}")
+        return []
 
 
 class ActionPascSmt(Action):
@@ -155,9 +202,19 @@ class ActionPascSmt(Action):
     def name(self) -> Text:
         return "action_pasc_smt"
 
+    def __init__(self) -> None:
+        self.is_intent_mappings = getIntentMsgMapFromFile(IS_INTENT_MESSAGE_MAPPING_PATH)
+
     def run(self, dispatcher, tracker, domain) -> List[EventType]:
         intent = tracker.latest_message["intent"].get("name")
+        # 根据intent从domain的responses中获取intent对应的utter_***={list 'text'}
+        text = self.is_intent_mappings.get(intent)
 
-        # retrieve the correct chitchat utterance dependent on the intent
-        dispatcher.utter_message(template=f"utter_{intent}")
+        if text is None:
+            text = tracker.latest_message["text"]
+
+        # 这里可以拿到text文本去请求Java后台服务内容
+
+        dispatcher.utter_message(text)
+
         return []

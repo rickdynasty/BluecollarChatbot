@@ -1,20 +1,8 @@
 actions:
-  - action_default_fallback
   - respond_faq
-  - utter_affirm
-  - utter_ask_city
-  - utter_ask_continue
-  - utter_ask_date_time
-  - utter_bye
-  - utter_default
-  - utter_deny
-  - utter_explain_why_city
-  - utter_explain_why_date_time
-  - utter_greet
-  - utter_thank
-  - utter_whatcanudo
-  - utter_whoareyou
   - action_pasc_smt
+  - action_pasc_chatqa
+  - action_default_fallback
 entities:
   # 信息实体 - 天气
   - date_time #日期
@@ -36,12 +24,49 @@ intents:
   - explain
   - faq
   - greet
+  - greet_shout
   - bye
   - whoareyou
   - thank
   - faq/ask_channels
   - faq/ask_languages
   - faq/ask_rasax
+  #  chat & QA
+  - chat_zm
+  - chat_xx
+  - chat_nlznl
+  - chat_nhb
+  - chat_jwnssb
+  - chat_wanan
+  - chat_nmtgzjgxs
+  - chat_hsq
+  - chat_happy
+  - chat_nhka
+  - chat_nsnhhsnh
+  - chat_zscsm
+  - chat_gwssh
+  - chat_zsh
+  - chat_whwl
+  - chat_wbmy
+  - chat_ndwwn
+  - chat_whsx
+  - chat_iloveyou
+  - chat_nhc
+  - chat_hfy
+  - chat_1
+  - chat_ay
+  - chat_nzh
+  - chat_jwcsg
+  - chat_nhwm
+  - chat_whl
+  - chat_nlbl
+  - chat_nxhwm
+  - chat_nydnlq
+  - chat_wss
+  - chat_hb
+  - chat_nhh
+  - chat_jttqzh
+  #  - 服务 & 事项
   - declare_wjziszdjgzzsblzncxn
   - declare_fsznljxzzsbjkdj
   - declare_grjkzzsb
@@ -339,14 +364,8 @@ responses:
     - text: "嗯嗯，好的！"
     - text: "嗯嗯，很开心能够帮您解决问题~"
     - text: "嗯嗯，还有什么我能够帮助您的呢？"
-  utter_ask_city:
-    - text: "请问，您要查下哪个地方的天气？"
-  utter_ask_continue:
-    - text: "流程将中断，你确定不继续了吗？"
-    - text: "你确定中断操作，不继续了吗？"
-    - text: "你不想知道结果了吗"
-  utter_ask_date_time:
-    - text: "请问，您要查询哪天的天气？"
+    - text: "太好了"
+    - text: "那我就放心了"
   utter_bye:
     - text: "Bye"
     - text: "再见"
@@ -360,606 +379,118 @@ responses:
   utter_deny:
     - text: "主人，您不开心吗？不要离开我哦"
     - text: "怎么了，主人？"
+  utter_greet:
+    - text: "您好，我是深小ｉ，有什么问题就尽管向我提问吧。"
+    - text: "您好，我是深小ｉ，很高兴认识您。"
+    - text: "你若安好，便是晴天"
+    - text: "深小ｉ很高兴见到你"
+    - text: "你好呀，有什么想问小ｉ的吗？"
+  utter_greet_shout:
+    - text: "叫我什么事？有问题可以直接问我哦~"
+  utter_thank:
+    - text: "嗯呢。不用客气~"
+    - text: "不客气！很高兴为您服务！"
+  utter_whatcanudo:
+    - text: "小ｉ会的可多了呢，有什么问题都可以问我哦～"
+  utter_whoareyou:
+    - text: "我是您的贴心小助手深小ｉ，有什么问题都可以问我。"
+  utter_ask_city:
+    - text: "请问，您要查下哪个地方的天气？"
+  utter_ask_continue:
+    - text: "流程将中断，你确定不继续了吗？"
+    - text: "你确定中断操作，不继续了吗？"
+    - text: "你不想知道结果了吗"
+  utter_ask_date_time:
+    - text: "请问，您要查询哪天的天气？"
   utter_explain_why_city:
     - text: "我们需要知道你想知道具体哪个地方的天气！"
   utter_explain_why_date_time:
     - text: "我们需要知道你想知道具体哪天的天气！"
-  utter_greet:
-    - text: "Hey! How are you?"
-    - text: "您好！请问我有什么可以帮到您吗？"
-    - text: "您好！很高兴为您服务。请说出您要查询的功能？"
-  utter_thank:
-    - text: "嗯呢。不用客气~"
-    - text: "这是我应该做的，主人~"
-    - text: "嗯嗯，合作愉快！"
-  utter_whatcanudo:
-    - text: "您好！很高兴为您服务，你可以和我聊天，我也可以查询天气哦~"
-  utter_whoareyou:
-    - text: "您好！我是小爱，您的AI助理"
-    - text: "我是小爱~呀，您的AI助理"
-  utter_declare_wjziszdjgzzsblzncxn:
-    - text: "我己在i深圳登记过自主申报了，在哪查询呢？"
-  utter_declare_fsznljxzzsbjkdj:
-    - text: "返深在哪里进行自主申报健康登记？"
-  utter_declare_grjkzzsb:
-    - text: "个人健康自主申报"
-  utter_declare_zzsbdjkewmznlcx:
-    - text: "自主申报的健康二维码在哪里查询？"
-  utter_declare_zzsbjkmxxtclzmxg:
-    - text: "自主申报健康码信息填错了怎么修改？"
-  utter_driver_license_jdcjszxxbhhz:
-    - text: "机动车驾驶证信息变化换证？"
-  utter_driver_license_jdcjszyxqmhz:
-    - text: "机动车驾驶证有效期满换证"
-  utter_driver_license_jdcjszccsl:
-    - text: "机动车驾驶证初次申领"
-  utter_driver_license_dzjsz:
-    - text: "电子驾驶证？"
-  utter_driver_license_bljsz:
-    - text: "补领驾驶证?"
-  utter_driver_license_hljsz:
-    - text: "换领驾驶证？"
-  utter_driver_license_zmcxjszdyxq:
-    - text: "怎么查询驾驶证的有效期？"
-  utter_epidemic_yyqbnfxwgbztqbydyyes_omit31:
-    - text: "因疫情不能返乡、务工不着、投亲不遇等原因而生活无着、具有生活自理能力的人员，出现生活困难的情形怎么办？可以去哪里求助？"
-  utter_face_mask_yhmywxhkycyzcyykzhdm:
-    - text: "用户没有微信，还可以参与这次预约口罩活动么？"
-  utter_face_mask_qykzyyrhqrsfzq:
-    - text: "企业口罩预约如何确认是否中签？"
-  utter_face_mask_yydkzjdznlck:
-    - text: "预约的口罩进度在那里查看？"
-  utter_face_mask_qyyykzzqhmyzgdsjnlq_omit5:
-    - text: "企业预约口罩中签后没有在规定时间内领取，以后还能领取吗？"
-  utter_face_mask_qyyykzzqhrhlq:
-    - text: "企业预约口罩中签后如何领取？"
-  utter_face_mask_yykzmyzqdqyhxyzxyydjm:
-    - text: "预约口罩没有中签的企业，还需要重新预约登记吗？"
-  utter_face_mask_yykzxysmtj:
-    - text: "预约口罩需要什么条件？"
-  utter_face_mask_smznljxkzyy:
-    - text: "市民在哪里进行口罩预约？"
-  utter_face_mask_znlkkzsfzq:
-    - text: "在哪里看口罩是否中签？"
-  utter_face_mask_qysmshksyyslkzsfxdxd:
-    - text: "企业什么时候开始预约申领口罩，是否先到先得？"
-  utter_face_mask_yykzzcmzqxcxyjxyym:
-    - text: "预约口罩这次没中签，下次需要继续预约吗？"
-  utter_face_mask_smmczqdkzydsg:
-    - text: "市民每次中签的口罩有多少个？"
-  utter_face_mask_qyznlyyslkz:
-    - text: "企业在哪里预约申领口罩？"
-  utter_face_mask_smkzzqlzmlq:
-    - text: "市民口罩中签了怎么领取？"
-  utter_hukou_wsmhjxxmygx:
-    - text: "为什么户籍信息没有更新？"
-  utter_hukou_bysrh:
-    - text: "毕业生入户？"
-  utter_hukou_bshrhjpoznsq:
-    - text: "博士后入户及配偶、子女随迁"
-  utter_hukou_wcnzntkfmhjqr:
-    - text: "未成年子女投靠父母户籍迁入"
-  utter_hukou_zsbgzryhjqr:
-    - text: "驻深办工作人员户籍迁入"
-  utter_hukou_fbshjjmsfzbl:
-    - text: "非本市户籍居民身份证办理？"
-  utter_hukou_xshkqc:
-    - text: "学生户口迁出？"
-  utter_hukou_czqzhkqc:
-    - text: "持准迁证户口迁出？"
-  utter_hukou_jfrh:
-    - text: "积分入户？"
-  utter_hukou_fqtkhjqr:
-    - text: "夫妻投靠户籍迁入"
-  utter_hukou_sxnyjbbsqrzdzzyxlqdxskz_omit14:
-    - text: "市(县)内移居(被本市全日制大中专院校录取的新生，可在入学时自愿选择户口迁入学校集体户)"
-  utter_id_card_blsfz:
-    - text: "补领身份证？"
-  utter_id_card_slblhljmsfz:
-    - text: "申领、补领、换领居民身份证？"
-  utter_id_card_bllssfz:
-    - text: "办理临时身份证？"
-  utter_id_card_hlsfz:
-    - text: "换领身份证？"
-  utter_jhsy_dpxqjhsyqkzmzsz:
-    - text: "【大鹏新区】计划生育情况证明（准生证）"
-  utter_jhsy_ytqjhsyqkzmzsz:
-    - text: "【盐田区】计划生育情况证明（准生证）"
-  utter_jhsy_ftqjhsyqkzmzsz:
-    - text: "【福田区】计划生育情况证明（准生证）"
-  utter_jhsy_baqjhsyqkzmzsz:
-    - text: "【宝安区】计划生育情况证明（准生证）"
-  utter_jjz_bljzz:
-    - text: "办理居住证？"
-  utter_jjz_blszjzzyydzdsmhzkym:
-    - text: "办理深圳居住证，用异地照的数码回执可以吗？"
-  utter_jjz_wsblszjzzsmzxtxhzmt:
-    - text: "网上办理深圳居住证，数码照相图像号怎么填？"
-  utter_jjz_szjzzblydj:
-    - text: "深圳居住证办理要多久？"
-  utter_jubao_blxxjb:
-    - text: "不良信息举报？"
-  utter_pass_blwlgatxzgryqz:
-    - text: "办理往来港澳通行证个人游签注？"
-  utter_pass_blgatxzqz:
-    - text: "办理港澳通行证签注？"
-  utter_pass_twjmdltxzbnytbzrz:
-    - text: "台湾居民大陆通行证不能用台胞证认证？"
-  utter_pass_wdcsqtxz:
-    - text: "外地车申请通行证？"
-  utter_pension_cxjmylbxgxjs:
-    - text: "城乡居民养老保险关系结算"
-  utter_qy_grdzqybgdj:
-    - text: "个人独资企业变更登记？"
-  utter_qy_pmqyjfgscspmywbghz:
-    - text: "拍卖企业及分公司从事拍卖业务变更核准？"
-  utter_qy_hhqyzcdj:
-    - text: "合伙企业注册登记？"
-  utter_qy_lhqyqqjqyfgba:
-    - text: "【龙华区】疫情期间企业复工备案"
-  utter_qy_nzqybgdj:
-    - text: "内资企业变更登记？"
-  utter_qy_hhqybgdj:
-    - text: "合伙企业变更登记？"
-  utter_qy_nzqyzcdj:
-    - text: "内资企业注册登记？"
-  utter_qy_pmqyjfgssqqdcspmywzzdhz:
-    - text: "拍卖企业及分公司申请取得从事拍卖业务终止的核准？"
-  utter_qy_grdzqyzcdj:
-    - text: "个人独资企业注册登记？"
-  utter_qy_ftqyqqjqyfgba:
-    - text: "【福田区】疫情期间企业复工备案"
-  utter_qy_2020n2yfsbfytjhbhyxqydzccbzt:
-    - text: "2020年2月份社保费用停缴会不会影响企业的正常参保状态？"
-  utter_qy_wstzhhqybgdj:
-    - text: "外商投资合伙企业变更登记？"
-  utter_qy_pmqyfgssqqdcspmywxkdhz:
-    - text: "拍卖企业分公司申请取得从事拍卖业务许可的核准？"
-  utter_qy_ytqyqqjqyfgba:
-    - text: "【盐田区】疫情期间企业复工备案"
-  utter_qy_wzqyzcdj:
-    - text: "外资企业注册登记？"
-  utter_rzpz_lsrzpz:
-    - text: "临时入住凭证？"
-  utter_social_security_szylbxydcbrzy_omit17:
-    - text: "深圳医疗保险一档参保人在异地发生普通门诊费用，可否使用深圳的社保卡？"
-  utter_social_security_bjrsbk:
-    - text: "办金融社保卡？"
-  utter_social_security_blsbk:
-    - text: "办理社保卡？"
-  utter_social_security_jbylbxgrzhjss_omit30:
-    - text: "基本医疗保险个人账户结算(丧失中华人民共和国国籍，本人书面申请终止社保关系、结算个人账户的参保人)"
-  utter_social_security_szssbjlxdhhdz:
-    - text: "深圳市社保局联系电话和地址？"
-  utter_social_security_hbsbk:
-    - text: "换/补社保卡？"
-  utter_traffic_bjm12fjsrxxks:
-    - text: "被记满12分驾驶人学习考试"
-  utter_un_xytjndbgdssztbknx:
-    - text: "需要提交年度报告的商事主体包括哪些？"
-  utter_un_dtswzl:
-    - text: "地铁失物招领？"
-  utter_un_ddytzxyxkzhf:
-    - text: "典当业特种行业许可证核发？"
-  utter_un_znlcxxqqzbl:
-    - text: "在哪里查询小区确证病例？"
-  utter_un_jwdzdt:
-    - text: "警务电子地图？"
-  utter_un_mzwhhdly:
-    - text: "每周文化活动-旅游？"
-  utter_un_sjxxcx:
-    - text: "水价信息查询？"
-  utter_un_baqgjdmcjlxfs:
-    - text: "宝安区各街道名称及联系方式"
-  utter_un_yhcxjsq:
-    - text: "摇号查询及申请？"
-  utter_un_spcykh:
-    - text: "食品从业考核？"
-  utter_un_sbkmmxgyzz:
-    - text: "社保卡密码修改与重置"
-  utter_un_qwsgcl:
-    - text: "轻微事故处理？"
-  utter_un_mzwhhd:
-    - text: "每周文化活动？"
-  utter_un_sbcbzm:
-    - text: "社保参保证明？"
-  utter_un_gsccmdjgcx:
-    - text: "公司抽查名单结果查询？"
-  utter_un_swbx:
-    - text: "水务报修？"
-  utter_un_bdcdjyy:
-    - text: "不动产登记预约？"
-  utter_un_kzyzqznlqjxlq:
-    - text: "口罩已中签，在哪里确进行领取？"
-  utter_un_yhzgzc:
-    - text: "摇号资格自测？"
-  utter_un_bdccxjfczm:
-    - text: "不动产查询及房产证明？"
-  utter_un_sxnyjzfclh:
-    - text: "市(县)内移居(在房产立户)"
-  utter_un_szzx:
-    - text: "市长在线？"
-  utter_un_jzzqzxq:
-    - text: "居住证签注/续签？"
-  utter_un_lscjzm:
-    - text: "临时乘机证明？"
-  utter_un_jdclpsq:
-    - text: "机动车临牌申请"
-  utter_un_jtwfcxrkznl:
-    - text: "交通违法查询入口在哪里？"
-  utter_un_kzyydjcghqrmdxsclzmb:
-    - text: "口罩预约登记成功后确认码短信删除了怎么办？"
-  utter_un_swjt:
-    - text: "水务集团"
-  utter_un_qyxycx:
-    - text: "企业信用查询？"
-  utter_un_jzzzmblgsxbllzfjy:
-    - text: "居住证怎么办理-跟事项办理类重复禁用"
-  utter_un_sfjn:
-    - text: "水费缴纳"
-  utter_un_sjllcz:
-    - text: "手机流量充值？"
-  utter_un_mzwhhdyd:
-    - text: "每周文化活动-阅读？"
-  utter_un_wczmxxdcx:
-    - text: "无车证明信息单查询？"
-  utter_un_ztkyqcpcx:
-    - text: "长途客运汽车票查询？"
-  utter_un_qyaqglzskyxxtbyhmhmmssm:
-    - text: "企业安全管理助手（抗疫信息填报）用户名和密码是什么？"
-  utter_un_sbkgsyjg:
-    - text: "社保卡挂失与解挂？"
-  utter_un_baqwcnrjzbhzx:
-    - text: "宝安区未成年人救助保护中心"
-  utter_un_ylcsba:
-    - text: "娱乐场所备案？"
-  utter_un_jsrxxdcx:
-    - text: "驾驶人信息单查询？"
-  utter_un_mybzwpxsxkbg:
-    - text: "民用爆炸物品销售许可（变更）？"
-  utter_un_xxgzbdyf:
-    - text: "新型冠状病毒预防"
-  utter_un_rhcxgrgjzm:
-    - text: "如何查询个人轨迹证明？"
-  utter_un_kzyyzqhdlqqxsdj:
-    - text: "口罩预约中签后的领取期限是多久？"
-  utter_un_rqjgcx:
-    - text: "燃气价格查询？"
-  utter_un_cjsyjtsl:
-    - text: "产假生育津贴申领"
-  utter_un_jszzr:
-    - text: "驾驶证转入？"
-  utter_un_dwbzjdcx:
-    - text: "单位报装进度查询？"
-  utter_un_yjnc:
-    - text: "一键挪车？"
-  utter_un_sbkzx:
-    - text: "社保卡注销？"
-  utter_un_zgsybxylfyhz:
-    - text: "职工生育保险医疗费用核准？"
-  utter_un_szsddyyfrmz:
-    - text: "深圳市定点医院/发热门诊"
-  utter_un_hlxsz:
-    - text: "换领行驶证？"
-  utter_un_zcqscjyxkzhfzqscjyxkzhf:
-    - text: "种畜禽生产经营许可证核发(种禽生产经营许可证核发)"
-  utter_un_szjy:
-    - text: "深圳教育？"
-  utter_un_fshlsxhtqrhbl:
-    - text: "非深户离深销户提取如何办理"
-  utter_un_sbhzmcx:
-    - text: "社保号怎么查询？"
-  utter_un_gjjtqdjdz:
-    - text: "公积金提取多久到帐？"
-  utter_un_jzzxqxyhkm:
-    - text: "居住证续签需要换卡吗？"
-  utter_un_swhdjl:
-    - text: "水务互动交流？"
-  utter_un_yytx:
-    - text: "预约通行？"
-  utter_un_mzwhhdty:
-    - text: "每周文化活动-体育？"
-  utter_un_gjjwsmtqbl:
-    - text: "公积金为什么提取不了？"
-  utter_un_rhzxhztsyiszzh:
-    - text: "如何注销或暂停使用i深圳账号？"
-  utter_un_sjhsbdyzmzmb:
-    - text: "手机号收不到验证码怎么办？"
-  utter_un_jszgcx:
-    - text: "技术资格查询？"
-  utter_un_sgbs:
-    - text: "深港巴士？"
-  utter_un_kzzqldmywlxxhwsdh:
-    - text: "口罩中签了但没有物流信息或未收到货？"
-  utter_un_gatjmdzzdj:
-    - text: "港澳台居民的暂住登记？"
-  utter_un_zyjyy:
-    - text: "中英街预约？"
-  utter_un_gjjzhmx:
-    - text: "公积金账户明细？"
-  utter_un_rgfw:
-    - text: "人工服务"
-  utter_un_hjqr:
-    - text: "户籍迁入？"
-  utter_un_yygh:
-    - text: "预约挂号？"
-  utter_un_rhsqszcllm:
-    - text: "如何申请深圳车辆绿码？"
-  utter_un_yszcx:
-    - text: "运输证查询？"
-  utter_un_ncpjgxq:
-    - text: "农产品价格行情？"
-  utter_un_gjrytb:
-    - text: "个缴人员停保"
-  utter_un_bzxrcx:
-    - text: "被执行人查询？"
-  utter_un_csdj:
-    - text: "出生登记？"
-  utter_un_xzhszxyglm:
-    - text: "现在回深圳需要隔离吗？"
-  utter_un_ccm:
-    - text: "乘车码"
-  utter_un_ytgxxcx:
-    - text: "盐田港信息查询？"
-  utter_un_kzyysddxqrmmyz24xsnfqrlqzmb:
-    - text: "口罩预约收到短信确认码没有在24小时内发确认领取怎么办？"
-  utter_un_jkmznlsc:
-    - text: "健康码在哪里生成？"
-  utter_un_clnj:
-    - text: "车辆年检"
-  utter_un_qzzlhdba:
-    - text: "犬只展览活动备案"
-  utter_un_ytc:
-    - text: "宜停车？"
-  utter_un_jdbfw:
-    - text: "街道办服务？"
-  utter_un_sznbnzxqdgjjzzblfwxy:
-    - text: "ｉ深圳能不能在线签订公积金自助办理服务协议?"
-  utter_un_hflp:
-    - text: "核发临牌？"
-  utter_un_jszxgywfwbky:
-    - text: "驾驶证相关业务？-服务不可用"
-  utter_un_ypzs:
-    - text: "药品助手？"
-  utter_un_yhjjqgl:
-    - text: "摇号竞价全攻略"
-  utter_un_mybzwpxsxkhz:
-    - text: "民用爆炸物品销售许可（换证）？"
-  utter_un_sbkslbkhkzxgsyjgxgmmzzmm:
-    - text: "社保卡申领、补卡、换卡、注销、挂失与解卦、修改密码、重置密码？"
-  utter_un_jyfw:
-    - text: "就业服务"
-  utter_un_ldxx:
-    - text: "领导信箱？"
-  utter_un_szdgjjdkkyyyljjfm:
-    - text: "深圳的公积金贷款可以用于老家建房吗？"
-  utter_un_gjjzhyecx:
-    - text: "公积金账户余额查询？"
-  utter_un_swsyylfyhz:
-    - text: "市外生育医疗费用核准"
-  utter_un_kzyytclxxrgrdhdzdkygzm:
-    - text: "口罩预约填错了信息，如个人电话、地址等可以更正吗？"
-  utter_un_hbdt:
-    - text: "航班动态？"
-  utter_un_wgsb:
-    - text: "无感申办？"
-  utter_un_ykcz:
-    - text: "油卡充值？"
-  utter_un_sztt:
-    - text: "深圳头条？"
-  utter_un_hbjfsryxyglm:
-    - text: "湖北籍返深人员需要隔离吗？"
-  utter_un_jfwdcx:
-    - text: "缴费网点查询？"
-  utter_un_cslkcx:
-    - text: "城市路况查询？"
-  utter_un_swcnrjzbhzx:
-    - text: "市未成年人救助保护中心"
-  utter_un_jcmtgp:
-    - text: "机场码头购票？"
-  utter_un_zytjpysyisz:
-    - text: "怎样推荐朋友使用i深圳？"
-  utter_un_zxzj:
-    - text: "在线值机？"
-  utter_un_hjzy:
-    - text: "环境噪音？"
-  utter_un_znlckzjyyydbs:
-    - text: "在哪里查看自己已预约的办事？"
-  utter_un_hbcx:
-    - text: "航班查询？"
-  utter_un_cxtx:
-    - text: "出行提醒？"
-  utter_un_zmqxbsyy:
-    - text: "怎么取消办事预约？"
-  utter_un_gslk:
-    - text: "高速路况？"
-  utter_un_grcjjjsqzlzb:
-    - text: "个人参加竞价申请增量指标"
-  utter_un_wycyszxbbbhfzxzfjy:
-    - text: "网约车运输证新办、补办、换发、注销？-重复禁用"
-  utter_un_rcyjyjbysjs:
-    - text: "人才引进（应届毕业生接收）？"
-  utter_un_dwcjjjsqzlzb:
-    - text: "单位参加竞价申请增量指标"
-  utter_un_2020ncjqjnjtbxx:
-    - text: "2020年春节期间哪几天不限行"
-  utter_un_zzrcyj:
-    - text: "在职人才引进？"
-  utter_un_yjbj:
-    - text: "一键报警？"
-  utter_un_zflyb:
-    - text: "政府留言板？"
-  utter_un_ghxsmzcw:
-    - text: "挂号显示名字错误？"
-  utter_un_dmsyy:
-    - text: "大梅沙预约？"
-  utter_un_fjyyzs:
-    - text: "附近医院/诊所"
-  utter_un_dfjn:
-    - text: "电费缴纳"
-  utter_un_jsrxxdsq:
-    - text: "驾驶人信息单申请？"
-  utter_un_yqpy:
-    - text: "疫情辟谣"
-  utter_un_jzzhlbl:
-    - text: "居住证换领、补领？"
-  utter_un_xmbg:
-    - text: "姓名变更？"
-  utter_un_hkhyfw:
-    - text: "航空货运服务？"
-  utter_un_rmyjjyzj:
-    - text: "人民意见建议征集"
-  utter_un_2020nszgqdychsdz:
-    - text: "2020年深圳各区的迎春花市地址"
-  utter_un_dtlxt:
-    - text: "地铁路线图？"
-  utter_un_jtwfcx:
-    - text: "交通违法查询？"
-  utter_un_fjqcwx:
-    - text: "附近汽车维修？"
-  utter_un_zqlqcghrhcxwldhhlqkd:
-    - text: "中签领取成功后如何查询物流单号和领取快递？"
-  utter_un_dzhzbgbazxtzsznldy:
-    - text: "打证回执、变更（备案）、注销通知书在哪里打印？"
-  utter_un_jszcxzfjy:
-    - text: "驾驶证查询？-重复禁用"
-  utter_un_kzyyzqytxm:
-    - text: "口罩预约中签有提醒吗？"
-  utter_un_jzdj:
-    - text: "居住登记？"
-  utter_un_ksbm:
-    - text: "考试报名？"
-  utter_un_kyxxtb:
-    - text: "抗疫信息填报"
-  utter_un_zzbgbdskd:
-    - text: "自助变更绑定社康点？"
-  utter_un_wczmsq:
-    - text: "无车证明申请？"
-  utter_un_rsdj:
-    - text: "入深登记？"
-  utter_un_iszgzhzn:
-    - text: "i深圳公众号在哪？"
-  utter_un_yqzrdj:
-    - text: "养犬转让登记"
-  utter_un_qyaqglzsddlmmbjdlrhzh:
-    - text: "企业安全管理助手的登录密码不记得了如何找回？"
-  utter_un_ztkygp:
-    - text: "长途客运购票？"
-  utter_un_gjjxstqtjynx:
-    - text: "公积金线上提取条件有哪些？"
-  utter_un_sbcx:
-    - text: "社保查询？"
-  utter_un_hfcz:
-    - text: "话费充值？"
-  utter_un_ftqfwzldjba:
-    - text: "【福田区】房屋租赁登记备案"
-  utter_un_2020szzxxxxx:
-    - text: "2020深圳最新限行消息"
-  utter_un_szslgqjzglzlxfs:
-    - text: "深圳市龙岗区救助管理站联系方式"
-  utter_un_jszns:
-    - text: "驾驶证年审？"
-  utter_un_tqcx:
-    - text: "天气查询？"
-  utter_un_qysdszs:
-    - text: "企业所得税征收"
-  utter_un_szdlmmwj:
-    - text: "ｉ深圳登录密码忘记？"
-  utter_un_qrpcsdgh:
-    - text: "迁入派出所代管户"
-  utter_un_kzyyzqlqcghrhcxwldhhlqkd:
-    - text: "口罩预约中签领取成功后如何查询物流单号和领取快递？"
-  utter_un_qysqqdcspmywxkdhz:
-    - text: "企业申请取得从事拍卖业务许可的核准？"
-  utter_un_zmqxgh:
-    - text: "怎么取消挂号？"
-  utter_un_kzyysmshkssfxyqg:
-    - text: "口罩预约什么时候开始，是否需要抢购？"
-  utter_un_sbjtzhbg:
-    - text: "社保家庭账户变更？"
-  utter_un_tfyb:
-    - text: "台风预报？"
-  utter_un_jtwfclzq:
-    - text: "交通违法处理专区？"
-  utter_un_rcyjjdcx:
-    - text: "人才引进进度查询？"
-  utter_un_ygacp:
-    - text: "粤港澳船票？"
-  utter_un_dzzzytynx:
-    - text: "电子证照用途有哪些？"
-  utter_un_zfbtsq:
-    - text: "租房补贴申请？"
-  utter_un_cszzmbl:
-    - text: "出生证怎么办理？"
-  utter_un_ssztnb:
-    - text: "商事主体年报"
-  utter_un_ksfw:
-    - text: "开锁服务？"
-  utter_un_gjjzzxyznlqd:
-    - text: "公积金自助协议在哪里签订？"
-  utter_un_blpthz:
-    - text: "办理普通护照？"
-  utter_un_spjyxkzhf:
-    - text: "食品经营许可证核发？"
-  utter_un_gzfrzsq:
-    - text: "公租房认租申请"
-  utter_un_rqfjn:
-    - text: "燃气费缴纳？"
-  utter_un_qyxzcf:
-    - text: "企业行政处罚？"
-  utter_un_wlyyczqcysznsqz:
-    - text: "网络预约出租汽车运输证年审签章？"
-  utter_un_dazrksdh:
-    - text: "档案转入-开商调函？"
-  utter_un_xyjbsc:
-    - text: "新婴疾病筛查？"
-  utter_un_yjzs:
-    - text: "应急知识？"
-  utter_un_pcscx:
-    - text: "派出所查询？"
-  utter_un_yjjzy:
-    - text: "应急局主页？"
-  utter_un_szszftzxmys:
-    - text: "深圳市政府投资项目验收？"
-  utter_un_sxnyjzggzlfwlh:
-    - text: "市(县)内移居(在公共租赁房屋立户)"
-  utter_un_mzwhhdyc:
-    - text: "每周文化活动-演出？"
-  utter_un_yqqjkcjsznlsq:
-    - text: "疫情期间开车进深圳哪里申请？"
-  utter_un_mzwhhdys:
-    - text: "每周文化活动-影视？"
-  utter_un_mzwhhdzl:
-    - text: "每周文化活动-展览？"
-  utter_un_gjssjzlxxxcyxmys:
-    - text: "国家、省、市级战略性新兴产业项目验收？"
-  utter_un_hcpw:
-    - text: "火车票务？"
-  utter_un_rcydt:
-    - text: "人才园大厅？"
-  utter_un_qyfgbbyzy:
-    - text: "企业复工报备与指引"
-  utter_un_wxccx:
-    - text: "维修厂查询？"
-  utter_un_flzxwd:
-    - text: "法律在线问答？"
-  utter_verified_smrzsrlsbwftggzmb:
-    - text: "实名认证时人脸识别无法通过该怎么办？"
-  utter_verified_gatjmrhziszjxsmrz:
-    - text: "港澳台居民如何在i深圳进行实名认证？"
-  utter_verified_wjrsrhziszjxsmrz:
-    - text: "外籍人士如何在i深圳进行实名认证？"
-  utter_yh_grqcyh:
-    - text: "个人汽车摇号"
-  utter_yq_lhqyqcsdj:
-    - text: "【龙华区】养犬初始登记"
-  utter_yq_dpxqyqzxdj:
-    - text: "【大鹏新区】养犬注销登记"
-  utter_yq_ytqyqzrdj:
-    - text: "【盐田区】养犬转让登记"
-  utter_yq_dpxqbbyqz:
-    - text: "【大鹏新区】补办养犬证"
-
+  utter_chat_zm:
+    - text: "hi，小i在的。"
+  utter_chat_xx:
+    - text: "不客气！很高兴为您服务！"
+  utter_chat_nlznl:
+    - text: "我是由i深圳团队创造的智能小秘书深小ｉ，可不是石头缝里蹦出来的哦~"
+  utter_chat_nhb:
+    - text: "我刚出生，还是个宝宝，你多教教我吧。"
+    - text: "等我变成行走的百科全书的那天，我再回来见你。"
+    - text: "莫欺少年蠢。"
+  utter_chat_jwnssb:
+    - text: "床前明月光，疑是地上霜。举头望明月，低头思故乡。"
+    - text: "两只黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。"
+  utter_chat_wanan:
+    - text: "晚安，祝你好梦~"
+  utter_chat_nmtgzjgxs:
+    - text: "小ｉ是机器人，不用睡觉哒~"
+  utter_chat_hsq:
+    - text: "小ｉ听说爱小动物的人都很有爱心哦~"
+  utter_chat_happy:
+    - text: "有什么好事不要忘了小ｉ哦，分享才是最大的快乐。"
+    - text: "(*￣︶￣)，有什么小ｉ可以帮到您的。"
+    - text: "你开心我就高兴"
+  utter_chat_nhka:
+    - text: "可爱是深小ｉ的天性。"
+    - text: "谢谢您的夸奖！"
+  utter_chat_nsnhhsnh:
+    - text: "我这么可爱的机器人，当然是个女孩子。"
+  utter_chat_zscsm:
+    - text: "带你吃豪华大餐"
+    - text: "机器人不需要吃饭"
+  utter_chat_gwssh:
+    - text: "好的，有什么问题可以直接跟小ｉ说哦～"
+  utter_chat_zsh:
+    - text: "早上好呀！"
+  utter_chat_whwl:
+    - text: "哦哦，那你跟小ｉ说说你的问题吧～"
+  utter_chat_wbmy:
+    - text: "真的吗"
+    - text: "是吗"
+    - text: "小ｉ会继续努力的～"
+  utter_chat_ndwwn:
+    - text: "我不会开玩笑"
+  utter_chat_whsx:
+    - text: "达令，怎么了？"
+    - text: "你还好吗？小ｉ一直都在哦。"
+  utter_chat_iloveyou:
+    - text: "I love you too~"
+  utter_chat_nhc:
+    - text: "可能你跟别人审美不一样吧。"
+  utter_chat_hfy:
+    - text: "找点时间，找点空闲，约群朋友，出去玩玩，烦恼全消。"
+  utter_chat_1:
+    - text: "抱歉哦，小ｉ没有识别出您输入的数字哦，麻烦重新描述下您的问题哦~"
+  utter_chat_ay:
+    - text: "怎么啦，可以跟小ｉ聊聊呀？"
+    - text: "有什么问题，可以给小ｉ说说哦"
+    - text: "您在烦恼什么呢？是我哪里做的不好吗？跟我说说吧~"
+  utter_chat_nzh:
+    - text: "嘿嘿，谢谢您对小ｉ的认可，么么哒"
+    - text: "为了帮上您的忙，我当然要勤加修炼。"
+  utter_chat_jwcsg:
+    - text: "我现在五音不全，等我练好了再给您唱歌"
+  utter_chat_nhwm:
+    - text: "喜欢你还来不及。"
+  utter_chat_whl:
+    - text: "累就去冲个热水澡，然后休息一下吧。"
+  utter_chat_nlbl:
+    - text: "我是机器人，不知道累"
+  utter_chat_nxhwm:
+    - text: "一见倾心，年年不忘"
+    - text: "爱你在心口难开"
+  utter_chat_nydnlq:
+    - text: "你的心里。"
+  utter_chat_wss:
+    - text: "网友，你不知道你叫啥？"
+    - text: "这是一个深奥的哲学问题。"
+  utter_chat_hb:
+    - text: "嗯，对的"
+    - text: "为您服务是我的荣幸"
+  utter_chat_nhh:
+    - text: "女孩不坏，男孩不爱"
+  utter_chat_jttqzh:
+    - text: "阳光正好，微风不燥，正好出去走走，邂逅一段美好。"
+    - text: "今天天气好晴朗，处处好风光。"
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60.0
