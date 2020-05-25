@@ -6,10 +6,8 @@
     使用心知天气数据查询天气
 """
 
-import json
-
 import requests
-
+import json
 from log.BCLog import log
 
 KEY = 'rmhrne8hal69uwyv'  # API key(私钥)

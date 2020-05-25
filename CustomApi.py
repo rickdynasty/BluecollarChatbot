@@ -20,8 +20,6 @@ from apis.ibapi import query_by_id
 from log.BCLog import log
 
 
-logger = logging.getLogger(__name__)
-
 
 class CustomApi(RestInput):
     @classmethod
@@ -49,6 +47,9 @@ class CustomApi(RestInput):
             # 1 参数转换 done
             # 2 请求转发 done
             # 注： 前端加上senderId
+
+            log.debug(json.dumps(request.json))
+
             sender_id = await self._extract_sender(request)
             text = self._extract_message(request)
 
@@ -62,10 +63,13 @@ class CustomApi(RestInput):
             answer_id = self._extract_answer_id(request)
             problem_id = self._extract_answer_id(request)
             if answer_id is not None or problem_id is not None:
-                return response.json(query_by_id(request.json))
+                log.debug('query by id')
+                json_result = query_by_id(request.json)
+                log.debug(json.dumps(json_result))
+                return response.json(json_result)
 
             # rasa 处理
-
+            log.debug('query by rasa')
             if should_use_stream:
                 return response.stream(
                     self.stream_response(
@@ -87,12 +91,12 @@ class CustomApi(RestInput):
                         )
                     )
                 except CancelledError:
-                    logger.error(
+                    log.error(
                         "Message handling timed out for "
                         "user message '{}'.".format(text)
                     )
                 except Exception:
-                    logger.exception(
+                    log.exception(
                         "An exception occured while handling "
                         "user message '{}'.".format(text)
                     )

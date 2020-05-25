@@ -12,6 +12,7 @@ from requests import (
 )
 
 from actions.WeatherApis import get_weather_by_day
+from apis.ibapi import query_by_problem_name
 from log.BCLog import log
 
 EventType = Dict[Text, Any]
@@ -213,8 +214,13 @@ class ActionPascSmt(Action):
         if text is None:
             text = tracker.latest_message["text"]
 
-        # 这里可以拿到text文本去请求Java后台服务内容
-
-        dispatcher.utter_message(text)
+        try:
+            response = query_by_problem_name(text).text
+            dispatcher.utter_message(response)
+            # for test
+            # dispatcher.utter_message(text)
+        except Exception:
+            log.error('调用失败', exc_info=True)
+            dispatcher.utter_message()
 
         return []

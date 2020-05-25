@@ -7,10 +7,8 @@
     图灵机器人(公司)闲聊系统API对接
     免费版只限每天调用100次，需联外网
 """
-import json
-
 import requests
-
+import json
 from log.BCLog import log
 
 
