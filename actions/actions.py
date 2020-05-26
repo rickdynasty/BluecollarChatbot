@@ -215,7 +215,7 @@ class ActionPascSmt(Action):
             text = tracker.latest_message["text"]
 
         try:
-            response = query_by_problem_name(text).text
+            response = query_by_problem_name(text) #.text
             dispatcher.utter_message(response)
             # for test
             # dispatcher.utter_message(text)
