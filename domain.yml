@@ -1,238 +1,95 @@
-actions:
-  - respond_faq
-  - action_pasc_smt
-  - action_pasc_chatqa
-  - action_default_fallback
-entities:
-  # 信息实体 - 天气
-  - date_time #日期
-  - city  #城市
-
-  # 信息实体 - 计划生育
-  - province #省份
-  - district #区、县
-  - name #名字
-forms:
-  - weather_form
-intents:
-  - request_weather
-  - continue
-  - deny
-  - inform
-  - affirm
-  - whatcanudo
-  - explain
-  - faq
-  - greet
-  - greet_shout
-  - bye
-  - whoareyou
-  - thank
-  - faq/ask_channels
-  - faq/ask_languages
-  - faq/ask_rasax
-  #  chat & QA
-  - chat_zm
-  - chat_nlznl
-  - chat_nhb
-  - chat_jwnssb
-  - chat_wanan
-  - chat_nmtgzjgxs
-  - chat_hsq
-  - chat_happy
-  - chat_nhka
-  - chat_nsnhhsnh
-  - chat_zscsm
-  - chat_gwssh
-  - chat_zsh
-  - chat_whwl
-  - chat_wbmy
-  - chat_ndwwn
-  - chat_whsx
-  - chat_iloveyou
-  - chat_nhc
-  - chat_hfy
-  - chat_1
-  - chat_ay
-  - chat_nzh
-  - chat_jwcsg
-  - chat_nhwm
-  - chat_whl
-  - chat_nlbl
-  - chat_nxhwm
-  - chat_nydnlq
-  - chat_wss
-  - chat_hb
-  - chat_nhh
-  - chat_jttqzh
-  #  - 服务 & 事项
-  - driver_license_hljsz
-  - driver_license_bljsz
-  - hukou_sqgrcbssfzhhkbytstgm
-  - hukou_byshjqr
-  - qy_wzqyzcdj
-  - qy_gxjsqyrd
-  - qy_hhqyzcdj
-  - qy_ycqymd
-  - qy_nzqyzcdj
-  - social_security_bjrsbk
-  - social_security_jrsbkbl
-  - un_smsajf
-  - un_gjjxstqdtj
-  - un_zzrcyj
-  - un_gjjtq
-  - un_yjbysrcyj
-  - un_hwrcyj
-  - un_scjycshygssynxyxdaqyq
-  - un_sbkgsyjg
-  - un_ccmwfdkrhcl
-  - un_qyxycx
-  - un_nzgszcdj
-  - un_ssgjjzbclwfsyzmb
-  - un_bdccx
-  - un_ccmgjcsmbcgrhcl
-  - un_jzzbl
-  - un_gjjzhmxcx
-  - un_csyzwt1
-  - un_sbkblhhqnllq
-  - un_gjjyecx
-  - un_qzcybtsl
-  - un_ylcsba
-  - un_xcbphf
-
-responses:
-  utter_affirm:
-    - text: "嗯嗯，好的！"
-    - text: "嗯嗯，很开心能够帮您解决问题~"
-    - text: "嗯嗯，还有什么我能够帮助您的呢？"
-    - text: "太好了"
-    - text: "那我就放心了"
-  utter_bye:
-    - text: "Bye"
-    - text: "再见"
-    - text: "拜拜"
-    - text: "虽然我有万般舍不得，但是天下没有不散的宴席~祝您安好！"
-    - text: "期待下次再见！"
-    - text: "嗯嗯，下次需要时随时记得我哟~"
-    - text: "see you!"
-  utter_default:
-    - text: "诶呀~o(╯□╰)o，小爱没听懂，我会努力成长的 (*^▽^*)~"
-  utter_deny:
-    - text: "主人，您不开心吗？不要离开我哦"
-    - text: "怎么了，主人？"
-  utter_greet:
-    - text: "您好，我是深小ｉ，有什么问题就尽管向我提问吧。"
-    - text: "您好，我是深小ｉ，很高兴认识您。"
-    - text: "你若安好，便是晴天"
-    - text: "深小ｉ很高兴见到你"
-    - text: "你好呀，有什么想问小ｉ的吗？"
-  utter_greet_shout:
-    - text: "叫我什么事？有问题可以直接问我哦~"
-  utter_thank:
-    - text: "嗯呢。不用客气~"
-    - text: "不客气！很高兴为您服务！"
-  utter_whatcanudo:
-    - text: "小ｉ会的可多了呢，有什么问题都可以问我哦～"
-  utter_whoareyou:
-    - text: "我是您的贴心小助手深小ｉ，有什么问题都可以问我。"
-  utter_ask_city:
-    - text: "请问，您要查下哪个地方的天气？"
-  utter_ask_continue:
-    - text: "流程将中断，你确定不继续了吗？"
-    - text: "你确定中断操作，不继续了吗？"
-    - text: "你不想知道结果了吗"
-  utter_ask_date_time:
-    - text: "请问，您要查询哪天的天气？"
-  utter_explain_why_city:
-    - text: "我们需要知道你想知道具体哪个地方的天气！"
-  utter_explain_why_date_time:
-    - text: "我们需要知道你想知道具体哪天的天气！"
-  utter_chat_zm:
-    - text: "hi，小i在的。"
-  utter_chat_nlznl:
-    - text: "我是由i深圳团队创造的智能小秘书深小ｉ，可不是石头缝里蹦出来的哦~"
-  utter_chat_nhb:
-    - text: "我刚出生，还是个宝宝，你多教教我吧。"
-    - text: "等我变成行走的百科全书的那天，我再回来见你。"
-    - text: "莫欺少年蠢。"
-  utter_chat_jwnssb:
-    - text: "床前明月光，疑是地上霜。举头望明月，低头思故乡。"
-    - text: "两只黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。"
-  utter_chat_wanan:
-    - text: "晚安，祝你好梦~"
-  utter_chat_nmtgzjgxs:
-    - text: "小ｉ是机器人，不用睡觉哒~"
-  utter_chat_hsq:
-    - text: "小ｉ听说爱小动物的人都很有爱心哦~"
-  utter_chat_happy:
-    - text: "有什么好事不要忘了小ｉ哦，分享才是最大的快乐。"
-    - text: "(*￣︶￣)，有什么小ｉ可以帮到您的。"
-    - text: "你开心我就高兴"
-  utter_chat_nhka:
-    - text: "可爱是深小ｉ的天性。"
-    - text: "谢谢您的夸奖！"
-  utter_chat_nsnhhsnh:
-    - text: "我这么可爱的机器人，当然是个女孩子。"
-  utter_chat_zscsm:
-    - text: "带你吃豪华大餐"
-    - text: "机器人不需要吃饭"
-  utter_chat_gwssh:
-    - text: "好的，有什么问题可以直接跟小ｉ说哦～"
-  utter_chat_zsh:
-    - text: "早上好呀！"
-  utter_chat_whwl:
-    - text: "哦哦，那你跟小ｉ说说你的问题吧～"
-  utter_chat_wbmy:
-    - text: "真的吗"
-    - text: "是吗"
-    - text: "小ｉ会继续努力的～"
-  utter_chat_ndwwn:
-    - text: "我不会开玩笑"
-  utter_chat_whsx:
-    - text: "达令，怎么了？"
-    - text: "你还好吗？小ｉ一直都在哦。"
-  utter_chat_iloveyou:
-    - text: "I love you too~"
-  utter_chat_nhc:
-    - text: "可能你跟别人审美不一样吧。"
-  utter_chat_hfy:
-    - text: "找点时间，找点空闲，约群朋友，出去玩玩，烦恼全消。"
-  utter_chat_1:
-    - text: "抱歉哦，小ｉ没有识别出您输入的数字哦，麻烦重新描述下您的问题哦~"
-  utter_chat_ay:
-    - text: "怎么啦，可以跟小ｉ聊聊呀？"
-    - text: "有什么问题，可以给小ｉ说说哦"
-    - text: "您在烦恼什么呢？是我哪里做的不好吗？跟我说说吧~"
-  utter_chat_nzh:
-    - text: "嘿嘿，谢谢您对小ｉ的认可，么么哒"
-    - text: "为了帮上您的忙，我当然要勤加修炼。"
-  utter_chat_jwcsg:
-    - text: "我现在五音不全，等我练好了再给您唱歌"
-  utter_chat_nhwm:
-    - text: "喜欢你还来不及。"
-  utter_chat_whl:
-    - text: "累就去冲个热水澡，然后休息一下吧。"
-  utter_chat_nlbl:
-    - text: "我是机器人，不知道累"
-  utter_chat_nxhwm:
-    - text: "一见倾心，年年不忘"
-    - text: "爱你在心口难开"
-  utter_chat_nydnlq:
-    - text: "你的心里。"
-  utter_chat_wss:
-    - text: "网友，你不知道你叫啥？"
-    - text: "这是一个深奥的哲学问题。"
-  utter_chat_hb:
-    - text: "嗯，对的"
-    - text: "为您服务是我的荣幸"
-  utter_chat_nhh:
-    - text: "女孩不坏，男孩不爱"
-  utter_chat_jttqzh:
-    - text: "阳光正好，微风不燥，正好出去走走，邂逅一段美好。"
-    - text: "今天天气好晴朗，处处好风光。"
 session_config:
+  session_expiration_time: 60
   carry_over_slots_to_new_session: true
-  session_expiration_time: 60.0
+intents:
+- request_weather
+- continue
+- deny
+- inform
+- affirm
+- whatcanudo
+- explain
+- faq
+- greet
+- greet_shout
+- bye
+- whoareyou
+- thank
+- faq/ask_channels
+- faq/ask_languages
+- faq/ask_rasax
+- chat_zm
+- chat_nlznl
+- chat_nhb
+- chat_jwnssb
+- chat_wanan
+- chat_nmtgzjgxs
+- chat_hsq
+- chat_happy
+- chat_nhka
+- chat_nsnhhsnh
+- chat_zscsm
+- chat_gwssh
+- chat_zsh
+- chat_whwl
+- chat_wbmy
+- chat_ndwwn
+- chat_whsx
+- chat_iloveyou
+- chat_nhc
+- chat_hfy
+- chat_1
+- chat_ay
+- chat_nzh
+- chat_jwcsg
+- chat_nhwm
+- chat_whl
+- chat_nlbl
+- chat_nxhwm
+- chat_nydnlq
+- chat_wss
+- chat_hb
+- chat_nhh
+- chat_jttqzh
+- driver_license_hljsz
+- driver_license_bljsz
+- hukou_sqgrcbssfzhhkbytstgm
+- hukou_byshjqr
+- qy_wzqyzcdj
+- qy_gxjsqyrd
+- qy_hhqyzcdj
+- qy_ycqymd
+- qy_nzqyzcdj
+- social_security_bjrsbk
+- social_security_jrsbkbl
+- un_smsajf
+- un_gjjxstqdtj
+- un_zzrcyj
+- un_gjjtq
+- un_yjbysrcyj
+- un_hwrcyj
+- un_scjycshygssynxyxdaqyq
+- un_sbkgsyjg
+- un_ccmwfdkrhcl
+- un_qyxycx
+- un_nzgszcdj
+- un_ssgjjzbclwfsyzmb
+- un_bdccx
+- un_ccmgjcsmbcgrhcl
+- un_jzzbl
+- un_gjjzhmxcx
+- un_csyzwt1
+- un_sbkblhhqnllq
+- un_gjjyecx
+- un_qzcybtsl
+- un_ylcsba
+- un_xcbphf
+entities:
+- date_time
+- city
+- province
+- district
+- name
 slots:
   city:
     type: text
@@ -241,6 +98,190 @@ slots:
   requested_slot:
     type: categorical
     values:
-      - date_time
-      - city
-      - __other__
+    - date_time
+    - city
+    - __other__
+responses:
+  utter_affirm:
+  - text: 嗯嗯，好的！
+  - text: 嗯嗯，很开心能够帮您解决问题~
+  - text: 嗯嗯，还有什么我能够帮助您的呢？
+  - text: 太好了
+  - text: 那我就放心了
+  utter_bye:
+  - text: Bye
+  - text: 再见
+  - text: 拜拜
+  - text: 虽然我有万般舍不得，但是天下没有不散的宴席~祝您安好！
+  - text: 期待下次再见！
+  - text: 嗯嗯，下次需要时随时记得我哟~
+  - text: see you!
+  utter_default:
+  - text: 诶呀~o(╯□╰)o，小爱没听懂，我会努力成长的 (*^▽^*)~
+  utter_deny:
+  - text: 主人，您不开心吗？不要离开我哦
+  - text: 怎么了，主人？
+  utter_greet:
+  - text: 您好，我是深小ｉ，有什么问题就尽管向我提问吧。
+  - text: 您好，我是深小ｉ，很高兴认识您。
+  - text: 你若安好，便是晴天
+  - text: 深小ｉ很高兴见到你
+  - text: 你好呀，有什么想问小ｉ的吗？
+  utter_greet_shout:
+  - text: 叫我什么事？有问题可以直接问我哦~
+  utter_thank:
+  - text: 嗯呢。不用客气~
+  - text: 不客气！很高兴为您服务！
+  utter_whatcanudo:
+  - text: 小ｉ会的可多了呢，有什么问题都可以问我哦～
+  utter_whoareyou:
+  - text: 我是您的贴心小助手深小ｉ，有什么问题都可以问我。
+  utter_ask_city:
+  - text: 请问，您要查下哪个地方的天气？
+  utter_ask_continue:
+  - text: 流程将中断，你确定不继续了吗？
+  - text: 你确定中断操作，不继续了吗？
+  - text: 你不想知道结果了吗
+  utter_ask_date_time:
+  - text: 请问，您要查询哪天的天气？
+  utter_explain_why_city:
+  - text: 我们需要知道你想知道具体哪个地方的天气！
+  utter_explain_why_date_time:
+  - text: 我们需要知道你想知道具体哪天的天气！
+  utter_chat_zm:
+  - text: hi，小i在的。
+  utter_chat_nlznl:
+  - text: 我是由i深圳团队创造的智能小秘书深小ｉ，可不是石头缝里蹦出来的哦~
+  utter_chat_nhb:
+  - text: 我刚出生，还是个宝宝，你多教教我吧。
+  - text: 等我变成行走的百科全书的那天，我再回来见你。
+  - text: 莫欺少年蠢。
+  utter_chat_jwnssb:
+  - text: 床前明月光，疑是地上霜。举头望明月，低头思故乡。
+  - text: 两只黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。
+  utter_chat_wanan:
+  - text: 晚安，祝你好梦~
+  utter_chat_nmtgzjgxs:
+  - text: 小ｉ是机器人，不用睡觉哒~
+  utter_chat_hsq:
+  - text: 小ｉ听说爱小动物的人都很有爱心哦~
+  utter_chat_happy:
+  - text: 有什么好事不要忘了小ｉ哦，分享才是最大的快乐。
+  - text: (*￣︶￣)，有什么小ｉ可以帮到您的。
+  - text: 你开心我就高兴
+  utter_chat_nhka:
+  - text: 可爱是深小ｉ的天性。
+  - text: 谢谢您的夸奖！
+  utter_chat_nsnhhsnh:
+  - text: 我这么可爱的机器人，当然是个女孩子。
+  utter_chat_zscsm:
+  - text: 带你吃豪华大餐
+  - text: 机器人不需要吃饭
+  utter_chat_gwssh:
+  - text: 好的，有什么问题可以直接跟小ｉ说哦～
+  utter_chat_zsh:
+  - text: 早上好呀！
+  utter_chat_whwl:
+  - text: 哦哦，那你跟小ｉ说说你的问题吧～
+  utter_chat_wbmy:
+  - text: 真的吗
+  - text: 是吗
+  - text: 小ｉ会继续努力的～
+  utter_chat_ndwwn:
+  - text: 我不会开玩笑
+  utter_chat_whsx:
+  - text: 达令，怎么了？
+  - text: 你还好吗？小ｉ一直都在哦。
+  utter_chat_iloveyou:
+  - text: I love you too~
+  utter_chat_nhc:
+  - text: 可能你跟别人审美不一样吧。
+  utter_chat_hfy:
+  - text: 找点时间，找点空闲，约群朋友，出去玩玩，烦恼全消。
+  utter_chat_1:
+  - text: 抱歉哦，小ｉ没有识别出您输入的数字哦，麻烦重新描述下您的问题哦~
+  utter_chat_ay:
+  - text: 怎么啦，可以跟小ｉ聊聊呀？
+  - text: 有什么问题，可以给小ｉ说说哦
+  - text: 您在烦恼什么呢？是我哪里做的不好吗？跟我说说吧~
+  utter_chat_nzh:
+  - text: 嘿嘿，谢谢您对小ｉ的认可，么么哒
+  - text: 为了帮上您的忙，我当然要勤加修炼。
+  utter_chat_jwcsg:
+  - text: 我现在五音不全，等我练好了再给您唱歌
+  utter_chat_nhwm:
+  - text: 喜欢你还来不及。
+  utter_chat_whl:
+  - text: 累就去冲个热水澡，然后休息一下吧。
+  utter_chat_nlbl:
+  - text: 我是机器人，不知道累
+  utter_chat_nxhwm:
+  - text: 一见倾心，年年不忘
+  - text: 爱你在心口难开
+  utter_chat_nydnlq:
+  - text: 你的心里。
+  utter_chat_wss:
+  - text: 网友，你不知道你叫啥？
+  - text: 这是一个深奥的哲学问题。
+  utter_chat_hb:
+  - text: 嗯，对的
+  - text: 为您服务是我的荣幸
+  utter_chat_nhh:
+  - text: 女孩不坏，男孩不爱
+  utter_chat_jttqzh:
+  - text: 阳光正好，微风不燥，正好出去走走，邂逅一段美好。
+  - text: 今天天气好晴朗，处处好风光。
+actions:
+- respond_faq
+- action_pasc_smt
+- action_pasc_chatqa
+- action_default_fallback
+- utter_affirm
+- utter_bye
+- utter_default
+- utter_deny
+- utter_greet
+- utter_greet_shout
+- utter_thank
+- utter_whatcanudo
+- utter_whoareyou
+- utter_ask_city
+- utter_ask_continue
+- utter_ask_date_time
+- utter_explain_why_city
+- utter_explain_why_date_time
+- utter_chat_zm
+- utter_chat_nlznl
+- utter_chat_nhb
+- utter_chat_jwnssb
+- utter_chat_wanan
+- utter_chat_nmtgzjgxs
+- utter_chat_hsq
+- utter_chat_happy
+- utter_chat_nhka
+- utter_chat_nsnhhsnh
+- utter_chat_zscsm
+- utter_chat_gwssh
+- utter_chat_zsh
+- utter_chat_whwl
+- utter_chat_wbmy
+- utter_chat_ndwwn
+- utter_chat_whsx
+- utter_chat_iloveyou
+- utter_chat_nhc
+- utter_chat_hfy
+- utter_chat_1
+- utter_chat_ay
+- utter_chat_nzh
+- utter_chat_jwcsg
+- utter_chat_nhwm
+- utter_chat_whl
+- utter_chat_nlbl
+- utter_chat_nxhwm
+- utter_chat_nydnlq
+- utter_chat_wss
+- utter_chat_hb
+- utter_chat_nhh
+- utter_chat_jttqzh
+forms:
+- weather_form
